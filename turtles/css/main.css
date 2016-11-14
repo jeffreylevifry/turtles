@@ -6,6 +6,9 @@ body {
 
 .draggable {
   z-index: 100;
+  height: 128px;
+  width: 128px;
+  position: absolute;
 }
 
 #painted {
@@ -41,7 +44,8 @@ h2 {
 #turtlecontainer {
   position: relative;
   display: block;
-  height: 550px;
+  height: 400px;
+  width: 100%;
   background-color: #2B99FF;
   margin: 0;
   padding: 0;
@@ -66,7 +70,7 @@ h2 {
 #ground {
   z-index: 50;
   position: relative;
-  height: 220px;
+  height: 320px;
   width: 100%;
   bottom: 210px;
   background-color: #548E54;
