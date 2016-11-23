@@ -4,17 +4,15 @@
 <head>
   <title>Turtles Of Pennsylvania</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <script src="js/jquery.min.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
   <link rel="stylesheet" href="css/main.css" />
-  <script src="js/main.js"></script>
 
-  <script>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="./scripts/physicsjs/physicsjs-full.js"></script>
 
-      $(document).ready(function(){
-        $('.draggable').pep({  constrainTo: 'body' });
-      });
-    </script>
+
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
 
 
@@ -26,48 +24,25 @@
 </head>
 
 <body>
+
   <h2>
   TURTLES OF PENNSYLVANIA
   </h2>
+   <div id="viewport"></div>
   <div id="turtlecontainer">
 
-  </div>
-  <div id="painted" class="draggable">
-    <img src="images/painted.gif" alt="Painted Turtle">
-  </div>
-  <div id="spotted" class="draggable">
-    <img src="images/spotted.gif" alt="Spotted Turtle">
+ 
+
+    
+
+
   </div>
   </div>
   <div id="ground" class="ignoreMe">
 
   </div>
 
-  <script src="http://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js" type="text/javascript"></script>
-  <script src="//rawgithub.com/briangonzalez/jquery.pep.js/master/src/jquery.pep.js"></script>
-  <script src="js/jgravity.js" type="text/javascript"></script>
-  <script>
-    $('body').onmouseup(function() {
-      
- 
-
-      $('body').jGravity({
-        target: '.draggable',
-        ignoreClass: 'ignoreMe',
-        weight: 1,
-        depth: 2,
-        drag: false
-
-      });
-
-
-
-    });
-  </script>
-  
-
-
-
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>
