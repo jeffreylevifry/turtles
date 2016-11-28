@@ -8,10 +8,9 @@
   <link rel="stylesheet" href="css/main.css" />
 
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script src="./scripts/physicsjs/physicsjs-full.js"></script>
 
-
-
+  <script src="./scripts/main.js"></script>
+  <script src="./scripts/throwable.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
 
@@ -28,21 +27,37 @@
   <h2>
   TURTLES OF PENNSYLVANIA
   </h2>
-   <div id="viewport"></div>
-  <div id="turtlecontainer">
-
- 
-
-    
-
-
+  <div id="infodropper">
+    <div id="notification">
+      
+    </div>
   </div>
+    <div id="turtleContainer1">
+      <div id="painted" class="turtle"></div>
+      <div id="spotted" class="turtle"></div>
+      <div id="softshell" class="turtle"></div>
+      <div id="snapping" class="turtle"></div>
+    </div>
+    <div id="turtleContainer2">
+      <div id="wood" class="turtle2"></div>
+      <div id="bog" class="turtle2"></div>
+      <div id="blandings" class="turtle2"></div>
+      <div id="map" class="turtle2"></div>
+    </div>
+    <div id="turtleContainer3">
+      <div id="mud" class="turtle3"></div>
+      <div id="redbelly" class="turtle3"></div>
+      <div id="box" class="turtle3"></div>
+      <div id="musk" class="turtle3"></div>
+
+    </div>
+<div id="hills">
   </div>
   <div id="ground" class="ignoreMe">
 
-  </div>
+  <script src="http://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js" type="text/javascript"></script>
 
-  <script src="./scripts/main.js"></script>
+
 </body>
 
 </html>

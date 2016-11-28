@@ -1,37 +1,124 @@
 body {
-  z-index: -100;
   margin: 0;
   padding: 0;
-  background-color: #2B99FF;
+  background-color: #548E54;
 }
 
-#viewport{
-    background-color: transparent;
-}
-.draggable {
-  height: 128px;
-  width: 128px;
+.turtle {
+
+  height: 50px;
+  width: 120px;
+  padding-bottom: 35px;
+  padding-top:35px;
+  background-repeat: no-repeat;
   position: absolute;
+    padding-left:4px;
+  padding-right:4px;
+  position:absolute;
+  
+}
+
+.turtle2 {
+  height: 30px;
+  width: 120px;
+  padding-bottom: 45px;
+  padding-top:45px;
+  background-repeat: no-repeat;
+    padding-left:4px;
+  padding-right:4px;
+  position: absolute;
+  background-image: url("../images/painted.gif");
+
+}
+
+.turtle3 {
+  height: 30px;
+  width: 120px;
+  padding-bottom: 45px;
+  padding-top:45px;
+  padding-left:4px;
+  padding-right:4px;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url("../images/painted.gif");
+
 }
 
 #painted {
-  height: 128px;
-  width: 128px;
-  background-image: url("../images/painted.gif");
+  left: 0px;
+  bottom: 0px;
+ background-image: url("../images/painted.gif");
 }
 
 #spotted {
-  left: 153px;
-  bottom: 75px;
+  left: 250px;
+  bottom: 0px;
+ background-image: url("../images/spotted.gif"); 
 }
 
-#turd {
-  left: 400px;
-  width: 20px;
-  height: 20px;
-  bottom: 40;
-  background-color: #000000;
+#softshell {
+  left: 420px;
+  bottom: 0px;
+ background-image: url("../images/softshell.gif");
 }
+
+#snapping {
+  left: 750px;
+  bottom: 0px;
+  background-image: url("../images/redbelly.gif"); 
+}
+
+#wood {
+  left: 100px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#bog {
+  left: 350px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#blandings {
+  left: 600px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#map {
+  left: 850px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#mud {
+  left: 50px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#redbelly {
+  left: 270px;
+  bottom: 0px;
+/* background-image: url("../images/painted.gif"); */
+}
+
+#box {
+  left: 520px;
+  bottom: 0px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+#musk {
+  left: 690px;
+  bottom: 75px;
+ /*  background-image: url("../images/painted.gif"); */
+}
+
+
+
+
 
 h2 {
   color: #fff;
@@ -45,8 +132,7 @@ h2 {
   background-color: #2B99FF;
 }
 
-#turtlecontainer {
-  z-index:-100;
+#hills{
   position: relative;
   display: block;
   height: 400px;
@@ -60,20 +146,52 @@ h2 {
 }
 
 #infodropper {
-  z-index: 50;
+  z-index: 250;
   position: absolute;
-  display: block;
-  height: 500px;
-  width: 250px;
+  height: 10%;
+  width: 5%;
   background-color: #fff;
   margin: 0;
   padding: 0;
-  right: 8%;
-  bottom: 12%;
+  right:0;
+  top:0;
+}
+@media screen and (max-width: 1200px) {
+    #infodropper {
+        display: none !important;
+    }
 }
 
+#turtleContainer1{
+  z-index: 150;
+    position: absolute;
+  display: block;
+  height: 220px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#turtleContainer2{
+  z-index: 150;
+  background-color: transparent;
+    position: absolute;
+  display: block;
+  height: 360px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}#turtleContainer3{
+  z-index: 150;
+  background-color: transparent;
+    position: absolute;
+  display: block;
+  height: 500px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 #ground {
-  z-index:-10;
+  z-index: 0;
   position: relative;
   height: 320px;
   width: 100%;
