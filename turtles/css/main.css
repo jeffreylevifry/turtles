@@ -5,120 +5,152 @@ body {
 }
 
 .turtle {
-
-  height: 50px;
-  width: 120px;
-  padding-bottom: 35px;
-  padding-top:35px;
-  background-repeat: no-repeat;
-  position: absolute;
-    padding-left:4px;
-  padding-right:4px;
-  position:absolute;
-  
+ /* background-color: #fff; */
 }
 
 .turtle2 {
   height: 30px;
-  width: 120px;
+  width: 100px;
   padding-bottom: 45px;
-  padding-top:45px;
+  padding-top: 45px;
   background-repeat: no-repeat;
-    padding-left:4px;
-  padding-right:4px;
+  padding-left: 14px;
+  padding-right: 14px;
   position: absolute;
   background-image: url("../images/painted.gif");
-
 }
 
 .turtle3 {
   height: 30px;
-  width: 120px;
+  width: 100px;
   padding-bottom: 45px;
-  padding-top:45px;
-  padding-left:4px;
-  padding-right:4px;
+  padding-top: 45px;
+  padding-left: 14px;
+  padding-right: 14px;
   background-repeat: no-repeat;
   position: absolute;
   background-image: url("../images/painted.gif");
-
 }
 
 #painted {
-  left: 0px;
+  height: 45px;
+  width: 95px;
+  position: relative;
+  left: 22px;
   bottom: 0px;
- background-image: url("../images/painted.gif");
+}
+
+#painted::before {
+  content: " ";
+  width: 128px;
+  height: 128px;
+  background-image: url("../images/painted.gif");
+  position: absolute;
+  left: -15px;
+  top: -11px;
 }
 
 #spotted {
+  height: 47px;
+  width: 95px;
+  position: relative;
   left: 250px;
   bottom: 0px;
- background-image: url("../images/spotted.gif"); 
+}
+
+#spotted::before {
+
+  content: " ";
+  width: 128px;
+  height: 128px;
+  background-image: url("../images/spotted.gif");
+    position: absolute;
+  left: -15px;
+  top: -14px;
 }
 
 #softshell {
-  left: 420px;
+  height: 40px;
+  width: 111px;
+  position: relative;
+  left: 500px;
   bottom: 0px;
- background-image: url("../images/softshell.gif");
+}
+
+#softshell::before {
+  position: absolute;
+  content: " ";
+  width: 128px;
+  height: 128px;
+  background-image: url("../images/softshell.gif");
 }
 
 #snapping {
+  height: 47px;
+  width: 95px;
+  position: relative;
   left: 750px;
   bottom: 0px;
-  background-image: url("../images/redbelly.gif"); 
+}
+
+#snapping::before {
+  position: absolute;
+  content: " ";
+  width: 128px;
+  height: 128px;
+  background-image: url("../images/redbelly.gif");
+  position: absolute;
+    left: -15px;
+  top: -14px;
 }
 
 #wood {
   left: 100px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #bog {
   left: 350px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #blandings {
   left: 600px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #map {
   left: 850px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #mud {
   left: 50px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #redbelly {
   left: 270px;
   bottom: 0px;
-/* background-image: url("../images/painted.gif"); */
+  /* background-image: url("../images/painted.gif"); */
 }
 
 #box {
   left: 520px;
   bottom: 0px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
 
 #musk {
   left: 690px;
   bottom: 75px;
- /*  background-image: url("../images/painted.gif"); */
+  /*  background-image: url("../images/painted.gif"); */
 }
-
-
-
-
 
 h2 {
   color: #fff;
@@ -132,7 +164,13 @@ h2 {
   background-color: #2B99FF;
 }
 
-#hills{
+@media screen and (max-width: 400px) {
+  #h2 {
+    letter-spacing: 8px;
+  }
+}
+
+#hills {
   position: relative;
   display: block;
   height: 400px;
@@ -153,43 +191,48 @@ h2 {
   background-color: #fff;
   margin: 0;
   padding: 0;
-  right:0;
-  top:0;
-}
-@media screen and (max-width: 1200px) {
-    #infodropper {
-        display: none !important;
-    }
+  right: 0;
+  top: 0;
 }
 
-#turtleContainer1{
+@media screen and (max-width: 1200px) {
+  #infodropper {
+    display: none !important;
+  }
+}
+
+#turtleContainer1 {
   z-index: 150;
-    position: absolute;
+  position: absolute;
   display: block;
-  height: 220px;
+  height: 400px;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-#turtleContainer2{
+
+#turtleContainer2 {
   z-index: 150;
   background-color: transparent;
-    position: absolute;
+  position: absolute;
   display: block;
-  height: 360px;
+  height: 450px;
   width: 100%;
   margin: 0;
   padding: 0;
-}#turtleContainer3{
+}
+
+#turtleContainer3 {
   z-index: 150;
   background-color: transparent;
-    position: absolute;
+  position: absolute;
   display: block;
   height: 500px;
   width: 100%;
   margin: 0;
   padding: 0;
 }
+
 #ground {
   z-index: 0;
   position: relative;
