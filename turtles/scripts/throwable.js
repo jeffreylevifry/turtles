@@ -2070,7 +2070,7 @@
 			this.m_position = new b2Vec2;
 			this.m_userData = e.userData;
 			this.m_friction = e.friction;
-			this.m_restitution = e.restitution;
+		 this.m_restitution = e.restitution;
 			this.m_body = t;
 			this.m_proxyId = b2Pair.b2_nullProxy;
 			this.m_maxRadius = 0;
@@ -2200,7 +2200,7 @@
 			this.userData = null;
 			this.localPosition = new b2Vec2(0, 0);
 			this.localRotation = 0;
-			this.friction = .2;
+			this.friction = 0;
 			this.restitution = 0;
 			this.density = 0;
 			this.categoryBits = 1;
@@ -2256,7 +2256,7 @@
 			this.userData = null;
 			this.localPosition = new b2Vec2(0, 0);
 			this.localRotation = 0;
-			this.friction = .2;
+			this.friction = 0;
 			this.restitution = 0;
 			this.density = 0;
 			this.categoryBits = 1;
@@ -2275,7 +2275,7 @@
 			this.userData = null;
 			this.localPosition = new b2Vec2(0, 0);
 			this.localRotation = 0;
-			this.friction = .2;
+			this.friction = 0;
 			this.restitution = 0;
 			this.density = 0;
 			this.categoryBits = 1;
@@ -2300,7 +2300,8 @@
 			this.m_position = new b2Vec2;
 			this.m_userData = e.userData;
 			this.m_friction = e.friction;
-			this.m_restitution = e.restitution;
+ this.m_restitution = e.restitution;
+
 			this.m_body = t;
 			this.m_proxyId = b2Pair.b2_nullProxy;
 			this.m_maxRadius = 0;
@@ -2404,7 +2405,7 @@
 			this.userData = null;
 			this.localPosition = new b2Vec2(0, 0);
 			this.localRotation = 0;
-			this.friction = .2;
+			this.friction = 0;
 			this.restitution = 0;
 			this.density = 0;
 			this.categoryBits = 1;
@@ -2444,7 +2445,7 @@
 			this.m_position = new b2Vec2;
 			this.m_userData = e.userData;
 			this.m_friction = e.friction;
-			this.m_restitution = e.restitution;
+			 this.m_restitution = e.restitution;
 			this.m_body = t;
 			this.m_proxyId = b2Pair.b2_nullProxy;
 			this.m_maxRadius = 0;
@@ -3197,7 +3198,8 @@
 			this.m_shape2 = t;
 			this.m_manifoldCount = 0;
 			this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
-			this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
+this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution); 
+
 			this.m_prev = null;
 			this.m_next = null;
 			this.m_node1.contact = null;
@@ -3364,6 +3366,7 @@
 					T.pointCount = E.pointCount;
 					T.friction = h;
 					T.restitution = p;
+
 					for (var N = 0; N < T.pointCount; ++N) {
 						var C = E.points[N];
 						var k = T.points[N];
@@ -3883,7 +3886,7 @@
 			this.m_shape2 = t;
 			this.m_manifoldCount = 0;
 			this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
-			this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
+			 this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
 			this.m_prev = null;
 			this.m_next = null;
 			this.m_node1.contact = null;
@@ -6354,7 +6357,8 @@
 					drag: true,
 					damping: 0,
 					collisionDetection: false,
-					areaDetection: []
+					areaDetection: [],
+					height: 300
 				},
 				/**
 				 * initElem initialize element
@@ -6436,6 +6440,7 @@
 						else {
 							var p = $(elements).parent();
 							if (!p.is("body")) {
+
 								var area = $(elements[0]).outerHeight();
 								this.stage = {
 									X: p.offset().left,
@@ -6722,6 +6727,7 @@
 				},
 				// Make box
 				createBox: function(world, x, y, width, height, fixed, categoryBits, maskBits, element) {
+					
 
 					if (typeof(fixed) === 'undefined')
 						fixed = true;
@@ -6736,7 +6742,8 @@
 						boxSd.density = 1.0;
 					var bounce = this.defaults.bounce;
 					if (bounce > 0)
-						boxSd.restitution = Math.min(1, bounce);
+						 boxSd.restitution = Math.min(1, bounce);
+
 
 
 
@@ -6867,13 +6874,19 @@
 					var x1 = this.stage.X,
 						y1 = this.stage.Y,
 						x2 = this.stage.Width,
+						//this variable is bad
 						y2 = this.stage.Height;
+					///////
+
+					
 					this.walls.top = this.createBox(world, (x1 + x2) / 2, y1 - wall_thickness, x2 - x1, wall_thickness, true, i, i);
 					this.walls.bottom = this.createBox(world, (x1 + x2) / 2, y2 + wall_thickness, x2 - x1, wall_thickness, true, i, i);
 					this.walls.left = this.createBox(world, x1 - wall_thickness, (y2 + y1) / 2, wall_thickness, y2 - y1, true, i, i);
 					this.walls.right = this.createBox(world, x2 + wall_thickness, (y2 + y1) / 2, wall_thickness, y2 - y1, true, i, i);
 					this.wallsSetted = true;
 
+					
+					
 				},
 				// .. UTILS
 				getElementProperties: function(element) {
@@ -6941,21 +6954,38 @@
 							changed = true;
 						}
 						return changed;
+						
+						
 					} else if (this.defaults.containment === "parent") {
+						
 						var _this = this;
 						var changed = false;
 						var parent = $(this.elements).parent();
+						var parentHeight =this.defaults.height;
 						var offset = parent.offset();
+							console.log(parentHeight);
 
 						$(this.elements).each(function(index, element) {
 							var body = _this.bodies[index];
+							
+															var x= (body.m_position.x + (offset.left - _this.stage.X));
+								var y= (body.m_position.y + (offset.top - _this.stage.Y));
 
 							_this.bodies[index].m_position = {
 								x: body.m_position.x + (offset.left - _this.stage.X),
 								y: body.m_position.y + (offset.top - _this.stage.Y)
+								
 							}
+							
+							//console.log("  x ="+x+"  y="+ y);
+							
+
+
+
 						});
 
+
+						
 						if (this.stage.X !== offset.left) {
 							this.delta.X = (offset.left - this.stage.X) * 50;
 							this.stage.X = offset.left;
@@ -6973,14 +7003,17 @@
 							changed = true;
 						}
 
-						if (this.stage.Height !== parent.outerHeight() + offset.left) {
-							this.stage.Height = parent.outerHeight() + offset.top;
+						if (this.stage.Height !== parentHeight + offset.top) {
+
+							this.stage.Height = (parentHeight + offset.top);
+
 							changed = true;
 						}
-
+						
 						return changed;
 					} else {
 						var c = this.defaults.containment;
+						
 						this.stage = {
 							X: c[0],
 							Y: c[1],
