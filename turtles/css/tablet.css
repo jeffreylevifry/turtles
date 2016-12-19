@@ -1,0 +1,227 @@
+@media screen and (max-width: 1024px) {
+
+
+#painted {
+	height: 45px;
+	width: 95px;
+	position: relative;
+	left: 3%;
+	bottom: 0px;
+}
+
+#painted::before {
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/painted.gif");
+	position: absolute;
+	left: -15px;
+	top: -11px;
+}
+
+#spotted {
+	height: 47px;
+	width: 95px;
+	position: relative;
+	left: 24%;
+	bottom: 0px;
+}
+
+#spotted::before {
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/spotted.gif");
+	position: absolute;
+	left: -15px;
+	top: -14px;
+}
+
+#softshell {
+	height: 40px;
+	width: 111px;
+	position: relative;
+	left: 49%;
+	bottom: 0px;
+}
+
+#softshell::before {
+	position: absolute;
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/softshell.gif");
+}
+
+#redbelly {
+	height: 47px;
+	width: 95px;
+	position: relative;
+	left: 72%;
+	bottom: 0px;
+}
+
+#redbelly::before {
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/redbelly.gif");
+	position: absolute;
+	left: -15px;
+	top: -14px;
+}
+
+
+
+#wood{
+	height: 45px;
+	width: 95px;
+	position: relative;
+	left: 9%;
+	bottom: 0px;
+}
+
+#wood::before {
+	content: " ";
+	width: 138px;
+	height: 138px;
+	background-image: url("../images/wood.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -15px;
+	top: -11px;
+}
+
+#bog {
+	height: 47px;
+	width: 75px;
+	position: relative;
+	left: 30%;
+	bottom: 0px;
+}
+
+#bog::before {
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/bog.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -17px;
+	top: -1px;
+}
+
+#blandings{
+	height: 40px;
+	width: 111px;
+	position: relative;
+	left: 54%;
+	bottom: 0px;
+}
+
+#blandings::before {
+	position: absolute;
+	content: " ";
+	width: 139px;
+	height: 128px;
+	background-image: url("../images/blandings.gif");
+	background-repeat: no-repeat;
+		left: -12px;
+	top: -14px;
+}
+
+#map{
+	height: 40px;
+	width: 90px;
+	position: relative;
+	left: 79%;
+	bottom: 0px;
+}
+
+#map::before {
+	content: " ";
+	width: 136px;
+	height: 128px;
+	background-image: url("../images/map.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -15px;
+	top: -14px;
+}
+
+#mud{
+	height: 45px;
+	width: 95px;
+	position: relative;
+	left: 15%;
+	bottom: 0px;
+}
+
+#mud::before {
+	content: " ";
+	width: 138px;
+	height: 128px;
+	background-image: url("../images/mud.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -15px;
+	top: -11px;
+}
+
+#snapping {
+	height: 55px;
+	width: 95px;
+	position: relative;
+	left: 36%;
+	bottom: 0px;
+}
+
+#snapping::before {
+	content: " ";
+	width: 138px;
+	height: 128px;
+	background-image: url("../images/snapping.gif");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: -15px;
+	top: -22px;
+}
+
+#box{
+	height: 40px;
+	width: 105px;
+	position: relative;
+	left: 60%;
+	bottom: 0px;
+}
+
+#box::before {
+	position: absolute;
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/box.gif");
+	background-repeat: no-repeat;
+		left: -8px;
+	top: -26px;
+}
+
+#musk{
+	height: 47px;
+	width: 88px;
+	position: relative;
+	left: 85%;
+	bottom: 0px;
+}
+
+#musk::before {
+	content: " ";
+	width: 128px;
+	height: 128px;
+	background-image: url("../images/musk.gif");
+	position: absolute;
+	background-repeat: no-repeat;
+	left: -32px;
+	top: -14px;
+}
+}

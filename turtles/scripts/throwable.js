@@ -6963,7 +6963,7 @@ this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_r
 						var parent = $(this.elements).parent();
 						var parentHeight =this.defaults.height;
 						var offset = parent.offset();
-							console.log(parentHeight);
+						
 
 						$(this.elements).each(function(index, element) {
 							var body = _this.bodies[index];

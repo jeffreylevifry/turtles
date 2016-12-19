@@ -272,7 +272,7 @@ a:active {
 
 h2 {
 	color: #fff;
-	font-size: 25px;
+	font-size: 24px;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-top: 25px;
@@ -286,6 +286,11 @@ h2 {
 	h2 {
 		letter-spacing: 8px;
 		padding-top: 18px;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	h2 {
+font-size: 37px;
 	}
 }
 
@@ -498,7 +503,7 @@ max-width: 50%;
 #turtleContainer2 {
 
 	position: absolute;
-	height: 450px;
+	height: 470px;
 	width: 100%;
 	margin: 5;
 
@@ -508,14 +513,26 @@ max-width: 50%;
 #turtleContainer3 {
 
 	position: absolute;
-	height: 550px;
+	height: 600px;
 	width: 100%;
 	margin: 5;
 
 
 }
 
-
+@media all and (orientation: landscape) {
+		#turtleContainer1 {
+	height: 400px;
+	}	#turtleContainer2 {
+	height: 550px;
+	}
+	
+	
+	#turtleContainer3 {
+	height: 700px;
+	}
+	
+}
 
 #ground {
 	position: relative;
