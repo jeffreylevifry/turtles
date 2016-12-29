@@ -32,8 +32,6 @@ a:active {
 }
 
 .turtle2 {
-
-
     
 
 }
@@ -269,13 +267,16 @@ a:active {
 	content: " ";
 	width: 128px;
 	height: 128px;
-	background-image: url("../images/musk.gif");
+	background-image: url("../images/wood.gif");
 
 	position: absolute;
 	background-repeat: no-repeat;
 	left: -32px;
 	top: -14px;
 }
+
+
+
 
 h2 {
 	color: #fff;
