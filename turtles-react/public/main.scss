@@ -7,27 +7,37 @@ body {
 	padding: 0;
 	background-color: $sky-blue;
 	overflow: hidden;
-	//background-image: url("./images/grass_hc.png");
+	
 	background-repeat:  repeat;
-	//background-blend-mode: multiply;
+
 }
 	
 h2 {
 	position: relative;
 		letter-spacing: 8px;
-		font-size:3vw;
+		font-size:3.2vw;
   color: #fff;
 	background-color:transparent;
 	font-family: silkscreennormal;
 	text-align: center;
 	}
-#hills {
+#hillWrapper {
 background-color: $sky-blue;
-}
-#ground {
-background-color: $earth-green;
+
 }
 
+
+#ground {
+background-color: $earth-green;
+	background-image: url("./images/grass_hc2.png");
+		background-blend-mode: multiply;
+}
+
+.turtleContainer{
+	background-color: $earth-green;
+		background-image: url("./images/grass_hc2.png");
+		background-blend-mode: multiply;
+}
 
 
 @font-face {

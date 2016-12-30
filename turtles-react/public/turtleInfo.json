@@ -1,0 +1,27 @@
+{
+
+
+  "softshell": {
+    "id": "softshell",
+    "fullName": "Softshell Turtle",
+    "sciName": "Apalone spinifera",
+    "size": "7-17 inches (18-43.2 cm) ",
+    "status": "Species of special concern",
+    "description": "One of the largest freshwater turtle species in North America. Both the common name, spiny softshell, and the specific name, spinifera (spine-bearing), refer to the spiny, cone-like projections on the leading edge of the carapace, which are not scutes (scales).  Female Spiny Softshell Turtles grow larger than the males of the species.",
+    "info": "Although the Midland Smooth Softshell turtle (Apalone m. mutica)  is listed in the map above, only two specimens have ever been found in PA. </br> Spiny softshells begin mating between ages 8 and 10. A large female turtle may live up to 50 years.The turtles mate in mid - to - late spring in deep water.The male will nudge the female 's head while swimming, and if she chooses to mate, the male will swim above the female without clasping her with his claws (unlike other turtles). A few months later, the female turtle quickly lays her eggs along a sunny sandbar or gravel bank in a flask-shaped cavity she has dug close to the water. The turtle nests more than once during a single season. She can lay between 9 and 38 round, calcareous-shelled eggs. The eggs are laid around August and September, and they hatch in the spring. Unlike in other turtles, in the spiny softshell turtle, the sex of the hatchlings is not determined by temperature variations; it is determined by genetics."
+
+  },
+
+  "painted": {
+    "id": "softshell",
+    "fullName": "Softshell Turtle",
+    "sciName": "Apalone spinifera",
+    "size": "7-17 inches (18-43.2 cm) ",
+    "status": "Species of special concern",
+    "description": "One of the largest freshwater turtle species in North America. Both the common name, spiny softshell, and the specific name, spinifera (spine-bearing), refer to the spiny, cone-like projections on the leading edge of the carapace, which are not scutes (scales).  Female Spiny Softshell Turtles grow larger than the males of the species.",
+    "info": "Although the Midland Smooth Softshell turtle (Apalone m. mutica)  is listed in the map above, only two specimens have ever been found in PA.
+
+      Spiny softshells begin mating between ages 8 and 10. A large female turtle may live up to 50 years.The turtles mate in mid - to - late spring in deep water.The male will nudge the female's head while swimming, and if she chooses to mate, the male will swim above the female without clasping her with his claws (unlike other turtles). A few months later, the female turtle quickly lays her eggs along a sunny sandbar or gravel bank in a flask-shaped cavity she has dug close to the water. The turtle nests more than once during a single season. She can lay between 9 and 38 round, calcareous-shelled eggs. The eggs are laid around August and September, and they hatch in the spring. Unlike in other turtles, in the spiny softshell turtle, the sex of the hatchlings is not determined by temperature variations; it is determined by genetics."
+
+  }
+}

@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Turtle = require('./turtle');
+var Turtle = require('./turtle.jsx');
 var TurtleMaker = require('./turtleMaker.jsx');
 var Hills = require('./hills.jsx');
 var Ground = require('./ground.jsx');
@@ -20,7 +20,6 @@ var Main = React.createClass({
 
       <TurtleMaker/>
         
-      <Turtle/>
       </div>
         )
     }

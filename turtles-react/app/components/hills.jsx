@@ -5,18 +5,18 @@ var hills = React.createClass({
     render: function() {
 			
  var hillStyle = {
-  zIndex:"-2",
-	position: "relative",
-	display: "block",
-	height: 100,
+  zIndex:"-1",
+	position: "absolute",
+	top: "12%",
+	height: "26%",
 	width: "100%",
-	margin: 0,
+//	marginBottom: "-20",
 	padding: 0,
-	 top:"2%",
 	backgroundImage: "url(./images/hills_darker.png)",
 	backgroundRepeat: "repeat-x",
-	backgroundPosition: "calc(100% - 10px) calc(100% - 10px)"
+//	backgroundPosition: "calc(100% - 10px) calc(100% - 10px)"
       }
+ 
 			
     return (
       

@@ -68,8 +68,7 @@
 	      ),
 	      React.createElement(Hills, null),
 	      React.createElement(Ground, null),
-	      React.createElement(TurtleMaker, null),
-	      React.createElement(Turtle, null)
+	      React.createElement(TurtleMaker, null)
 	    );
 	  }
 	});
@@ -21525,16 +21524,49 @@
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(35);
 
-	var turtle = React.createClass({
-	    displayName: 'turtle',
+	var turtle = function (_React$Component) {
+	  _inherits(turtle, _React$Component);
 
-	    render: function render() {
-	        return React.createElement('div', { className: 'turtle' });
+	  function turtle() {
+	    _classCallCheck(this, turtle);
+
+	    return _possibleConstructorReturn(this, (turtle.__proto__ || Object.getPrototypeOf(turtle)).apply(this, arguments));
+	  }
+
+	  _createClass(turtle, [{
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      console.log('this is:', this);
 	    }
-	});
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      // This syntax ensures `this` is bound within handleClick
+	      return React.createElement(
+	        'button',
+	        { onClick: function onClick(e) {
+	            return _this2.handleClick(e);
+	          } },
+	        'Click me'
+	      );
+	    }
+	  }]);
+
+	  return turtle;
+	}(React.Component);
 
 	module.exports = turtle;
 
@@ -21548,114 +21580,71 @@
 	var ReactDOM = __webpack_require__(35);
 
 	var turtlesInfo = React.createClass({
-	  displayName: 'turtlesInfo',
+		displayName: 'turtlesInfo',
 
-	  render: function render() {
 
-	    var container = {
-	      //	zIndex:1,
+		handleClick: function handleClick() {
+			console.log('this is:', this);
+			return {};
+		},
 
-	      width: "100%",
-	      height: "100%"
+		render: function render() {
 
-	    };
+			var turtleStyle = {
+				position: "relative",
+				display: "inline-block",
+				zIndex: 1,
+				paddingTop: "2vh",
+				paddingBottom: "2vh",
+				paddingRight: "1vw",
+				paddingLeft: "1vw",
+				//   backgroundColor: "#ffde00",
+				width: "21%",
+				height: "20%",
+				float: "left"
 
-	    var turtleStyle = {
-	      position: "relative",
-	      display: "inline-block",
-	      zIndex: 1,
-	      marginLeft: "2%",
-	      marginRight: "2%",
-	      //   backgroundColor: "#ffde00",
-	      width: "19%",
-	      height: "auto",
-	      float: "left"
+			};
 
-	    };
+			var imageStyle = {
+				width: "100%",
+				height: "auto"
 
-	    var imageStyle = {
-	      width: "100%",
-	      height: "auto"
+			};
 
-	    };
+			var turtleContainer = {
+				//	zIndex:1,
+				position: "absolute",
+				paddingTop: "1%",
+				width: "100%",
+				margin: "auto",
+				top: "25%",
+				height: "74%",
+				display: "table-cell",
+				verticalAlign: "bottom"
 
-	    var turtleContainer1 = {
-	      //	zIndex:1,
-	      position: "relative",
-	      width: "100%",
+			};
 
-	      height: "20%",
-	      display: "table-cell",
-	      verticalAlign: "bottom"
+			var names = ['painted', 'spotted', 'softshell', 'redbelly', 'wood', 'bog', 'blandings', 'map', 'mud', 'snapping', 'box', 'musk'];
 
-	    };
-	    var turtleContainer2 = {
-	      //	zIndex:1,
-	      position: "relative",
+			return React.createElement(
+				'div',
+				{ className: 'turtleContainer', style: turtleContainer },
+				' ',
+				names.map(function (turtle) {
+					var _this = this;
 
-	      height: "20%",
-	      display: "table-cell",
-	      verticalAlign: "bottom"
-
-	    };
-	    var turtleContainer3 = {
-	      //	zIndex:1,
-	      position: "relative",
-	      width: "100%",
-	      height: "20%",
-	      display: "table-cell",
-	      verticalAlign: "bottom"
-
-	    };
-
-	    var names = ['painted', 'spotted', 'softshell', 'redbelly'];
-	    var names2 = ['wood', 'bog', 'blandings', 'map'];
-	    var names3 = ['mud', 'snapping', 'box', 'musk'];
-
-	    return React.createElement(
-	      'div',
-	      { className: 'container' },
-	      React.createElement(
-	        'div',
-	        { className: 'turtleContainer1', style: turtleContainer1 },
-	        names.map(function (turtle) {
-
-	          var turtleImgConcat = 'images/' + turtle + '.gif';
-	          return React.createElement(
-	            'div',
-	            { key: turtle.name, className: 'turtle', style: turtleStyle },
-	            React.createElement('img', { style: imageStyle, src: turtleImgConcat })
-	          );
-	        })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'turtleContainer2', style: turtleContainer2 },
-	        names2.map(function (turtle) {
-
-	          var turtleImgConcat = 'images/' + turtle + '.gif';
-	          return React.createElement(
-	            'div',
-	            { key: turtle.name, className: 'turtle', style: turtleStyle },
-	            React.createElement('img', { style: imageStyle, src: turtleImgConcat })
-	          );
-	        })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'turtleContainer3', style: turtleContainer3 },
-	        names3.map(function (turtle) {
-
-	          var turtleImgConcat = 'images/' + turtle + '.gif';
-	          return React.createElement(
-	            'div',
-	            { key: turtle.name, className: 'turtle', style: turtleStyle },
-	            React.createElement('img', { style: imageStyle, src: turtleImgConcat })
-	          );
-	        })
-	      )
-	    );
-	  }
+					var turtleImgConcat = 'images/' + turtle + '.gif';
+					return React.createElement(
+						'div',
+						{ key: turtle.name, className: 'turtle', style: turtleStyle,
+							onClick: function onClick() {
+								return _this.handleClick.bind();
+							} },
+						React.createElement('img', { style: imageStyle, src: turtleImgConcat })
+					);
+				})
+			);
+		}
 	});
 
 	module.exports = turtlesInfo;
@@ -21670,26 +21659,24 @@
 	var ReactDOM = __webpack_require__(35);
 
 	var hills = React.createClass({
-		displayName: 'hills',
+	  displayName: 'hills',
 
-		render: function render() {
+	  render: function render() {
 
-			var hillStyle = {
-				zIndex: "-2",
-				position: "relative",
-				display: "block",
-				height: 100,
-				width: "100%",
-				margin: 0,
-				padding: 0,
-				top: "2%",
-				backgroundImage: "url(./images/hills_darker.png)",
-				backgroundRepeat: "repeat-x",
-				backgroundPosition: "calc(100% - 10px) calc(100% - 10px)"
-			};
+	    var hillStyle = {
+	      zIndex: "-1",
+	      position: "absolute",
+	      top: "12%",
+	      height: "26%",
+	      width: "100%",
+	      //	marginBottom: "-20",
+	      padding: 0,
+	      backgroundImage: "url(./images/hills_darker.png)",
+	      backgroundRepeat: "repeat-x"
+	    };
 
-			return React.createElement('div', { id: 'hills', style: hillStyle });
-		}
+	    return React.createElement('div', { id: 'hills', style: hillStyle });
+	  }
 	});
 
 	module.exports = hills;
@@ -21712,8 +21699,8 @@
 	            zIndex: "-2",
 	            position: "absolute",
 	            display: "block",
-	            top: 160,
-	            height: 1600,
+	            top: "25%",
+	            height: "78%",
 	            width: "100%",
 	            margin: 0,
 	            padding: 0
@@ -21736,7 +21723,7 @@
 	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(193)(content, {});
+	var update = __webpack_require__(194)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -21761,7 +21748,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background-color: #2B99FF;\n  overflow: hidden;\n  background-repeat: repeat; }\n\nh2 {\n  position: relative;\n  letter-spacing: 8px;\n  font-size: 3vw;\n  color: #fff;\n  background-color: transparent;\n  font-family: silkscreennormal;\n  text-align: center; }\n\n#hills {\n  background-color: #2B99FF; }\n\n#ground {\n  background-color: #67A256; }\n\n@font-face {\n  font-family: 'silkscreenbold';\n  src: url(" + __webpack_require__(182) + ");\n  src: url(" + __webpack_require__(182) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(183) + ") format(\"woff\"), url(" + __webpack_require__(184) + ") format(\"truetype\"), url(" + __webpack_require__(185) + "#silkscreenbold) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'silkscreennormal';\n  src: url(" + __webpack_require__(186) + ");\n  src: url(" + __webpack_require__(186) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(187) + ") format(\"woff\"), url(" + __webpack_require__(188) + ") format(\"truetype\"), url(" + __webpack_require__(189) + "#silkscreennormal) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Blenda Script';\n  src: url(" + __webpack_require__(190) + ");\n  src: url(" + __webpack_require__(190) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(191) + ") format(\"woff\"), url(" + __webpack_require__(192) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background-color: #2B99FF;\n  overflow: hidden;\n  background-repeat: repeat; }\n\nh2 {\n  position: relative;\n  letter-spacing: 8px;\n  font-size: 3.2vw;\n  color: #fff;\n  background-color: transparent;\n  font-family: silkscreennormal;\n  text-align: center; }\n\n#hillWrapper {\n  background-color: #2B99FF; }\n\n#ground {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(182) + ");\n  background-blend-mode: multiply; }\n\n.turtleContainer {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(182) + ");\n  background-blend-mode: multiply; }\n\n@font-face {\n  font-family: 'silkscreenbold';\n  src: url(" + __webpack_require__(183) + ");\n  src: url(" + __webpack_require__(183) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(184) + ") format(\"woff\"), url(" + __webpack_require__(185) + ") format(\"truetype\"), url(" + __webpack_require__(186) + "#silkscreenbold) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'silkscreennormal';\n  src: url(" + __webpack_require__(187) + ");\n  src: url(" + __webpack_require__(187) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(188) + ") format(\"woff\"), url(" + __webpack_require__(189) + ") format(\"truetype\"), url(" + __webpack_require__(190) + "#silkscreennormal) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Blenda Script';\n  src: url(" + __webpack_require__(191) + ");\n  src: url(" + __webpack_require__(191) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(192) + ") format(\"woff\"), url(" + __webpack_require__(193) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n", ""]);
 
 	// exports
 
@@ -21824,72 +21811,78 @@
 
 /***/ },
 /* 182 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.eot";
+	module.exports = "data:image/png;base64,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"
 
 /***/ },
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.woff";
+	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.eot";
 
 /***/ },
 /* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.ttf";
+	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.woff";
 
 /***/ },
 /* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.svg";
+	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.ttf";
 
 /***/ },
 /* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.eot";
+	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.svg";
 
 /***/ },
 /* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.woff";
+	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.eot";
 
 /***/ },
 /* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.ttf";
+	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.woff";
 
 /***/ },
 /* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.svg";
+	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.ttf";
 
 /***/ },
 /* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/BlendaScript.eot";
+	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.svg";
 
 /***/ },
 /* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/BlendaScript.woff";
+	module.exports = __webpack_require__.p + "fonts/BlendaScript.eot";
 
 /***/ },
 /* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/BlendaScript.ttf";
+	module.exports = __webpack_require__.p + "fonts/BlendaScript.woff";
 
 /***/ },
 /* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/BlendaScript.ttf";
+
+/***/ },
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
