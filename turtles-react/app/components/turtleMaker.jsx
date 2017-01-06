@@ -1,23 +1,22 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Turtle = React.createFactory(require('./turtle.jsx'));
+
+class turtleMaker extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+	handleClick(id) {
+		console.log('turtleMaker handleClick(id) is:', id);
+		localStorage.setItem("currentTurtle", id);
+		ReactDOM.render(<Turtle id ={id} />, document.getElementById('hills'));
+	}
 
 
 
-var turtlesInfo = React.createClass({
-
-	
-	
-	handleClick: function() {
-		console.log('this is:', this);
-		return {};
-	},
-
-
-
-	render: function() {
-
-
-
+	render() {
 
 		var turtleStyle = {
 			position: "relative",
@@ -32,11 +31,7 @@ var turtlesInfo = React.createClass({
 			height: "20%",
 			float: "left"
 
-
-
 		};
-
-
 
 		var imageStyle = {
 			width: "100%",
@@ -69,19 +64,17 @@ var turtlesInfo = React.createClass({
 			<div className = "turtleContainer"style = {turtleContainer} > {
 				names.map(function(turtle) {
 
-
-
-					var turtleImgConcat = 'images/' + turtle + '.gif';
+					var turtleImgConcat = ('images/' + turtle + '.gif').toString();
+					var turtleString = (turtle).toString();
 					return (
-
-						<div key = {turtle.name} className = "turtle" style = {turtleStyle}
-						onClick = {() => this.handleClick.bind()} >
+						<div id={turtleString} key={turtleImgConcat} className = "turtle" style = {turtleStyle}
+						onClick={() => this.handleClick(turtleString)}   >
 						<img style = {imageStyle} src = {turtleImgConcat}></img> 
 						</div>
 
 
 					)
-				})
+				},this)
 			}
 
 			</div>
@@ -92,11 +85,10 @@ var turtlesInfo = React.createClass({
 
 
 	}
-});
+}
 
 
+	
 
 
-
-
-module.exports = turtlesInfo;
+module.exports = turtleMaker;

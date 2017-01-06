@@ -1,27 +1,60 @@
-{
+[
 
-
-  "softshell": {
-    "id": "softshell",
-    "fullName": "Softshell Turtle",
-    "sciName": "Apalone spinifera",
-    "size": "7-17 inches (18-43.2 cm) ",
-    "status": "Species of special concern",
-    "description": "One of the largest freshwater turtle species in North America. Both the common name, spiny softshell, and the specific name, spinifera (spine-bearing), refer to the spiny, cone-like projections on the leading edge of the carapace, which are not scutes (scales).  Female Spiny Softshell Turtles grow larger than the males of the species.",
-    "info": "Although the Midland Smooth Softshell turtle (Apalone m. mutica)  is listed in the map above, only two specimens have ever been found in PA. </br> Spiny softshells begin mating between ages 8 and 10. A large female turtle may live up to 50 years.The turtles mate in mid - to - late spring in deep water.The male will nudge the female 's head while swimming, and if she chooses to mate, the male will swim above the female without clasping her with his claws (unlike other turtles). A few months later, the female turtle quickly lays her eggs along a sunny sandbar or gravel bank in a flask-shaped cavity she has dug close to the water. The turtle nests more than once during a single season. She can lay between 9 and 38 round, calcareous-shelled eggs. The eggs are laid around August and September, and they hatch in the spring. Unlike in other turtles, in the spiny softshell turtle, the sex of the hatchlings is not determined by temperature variations; it is determined by genetics."
+   {
+    "id": "painted",
+    "fullName": "Painted Turtle",
+    "sciName": "Chrysemys picta (Eastern) & Chrysemys marginata (Midland)",
+    "size": "4.5-8 inches (10-18 cm) in length",
+    "status": "Abundant",
+     "habitat":"Slow-moving fresh waters. Most frequently observed basking on rocks and logs.",
+    "description": "The adult painted turtle female is 10–25 cm (4–10 in) long; the male is smaller. The turtle's top shell is dark and smooth, without a ridge. Its skin is olive to black with red, orange, or yellow stripes on its extremities. The subspecies can be distinguished by their shells: the eastern has straight-aligned top shell segments while the midland has a large gray mark on the bottom shell.",
+    "info": "The painted turtle is the most widespread native turtle of North America. It lives in slow-moving fresh waters, from southern Canada to Louisiana and northern Mexico, and from the Atlantic to the Pacific. The turtle is the only species of the genus Chrysemys,which is part of the pond turtle family Emydidae. Fossils show that the painted turtle existed 15 million years ago. Four regionally based subspecies (the eastern, midland, southern, and western) evolved during the last ice age. ",
+     "photoLink":"http://www.flickr.com/people/17004938@N00",
+     "photoAuthor":"GREG SCHECHTER",
+     "infoLink":"https://en.wikipedia.org/wiki/Painted_turtle"
 
   },
 
-  "painted": {
+   {
     "id": "softshell",
     "fullName": "Softshell Turtle",
     "sciName": "Apalone spinifera",
     "size": "7-17 inches (18-43.2 cm) ",
     "status": "Species of special concern",
+     "habitat":"Large rivers and lakes to small ponds and slow-moving creeks with a sandy or muddy bottom.",
     "description": "One of the largest freshwater turtle species in North America. Both the common name, spiny softshell, and the specific name, spinifera (spine-bearing), refer to the spiny, cone-like projections on the leading edge of the carapace, which are not scutes (scales).  Female Spiny Softshell Turtles grow larger than the males of the species.",
-    "info": "Although the Midland Smooth Softshell turtle (Apalone m. mutica)  is listed in the map above, only two specimens have ever been found in PA.
+    "info": "Although the Midland Smooth Softshell turtle (Apalone m. mutica)  is listed in the map above, only two specimens have ever been found in PA. Spiny softshells begin mating between ages 8 and 10. A large female turtle may live up to 50 years.The turtles mate in mid - to - late spring in deep water.The male will nudge the female's head while swimming, and if she chooses to mate, the male will swim above the female without clasping her with his claws (unlike other turtles). A few months later, the female turtle quickly lays her eggs along a sunny sandbar or gravel bank in a flask-shaped cavity she has dug close to the water. The turtle nests more than once during a single season. She can lay between 9 and 38 round, calcareous-shelled eggs. The eggs are laid around August and September, and they hatch in the spring. Unlike in other turtles, in the spiny softshell turtle, the sex of the hatchlings is not determined by temperature variations; it is determined by genetics.",
+     "photoLink":"http://www.flickr.com/people/17004938@N00",
+     "photoAuthor":"GREG SCHECHTER",
+     "infoLink":"https://en.wikipedia.org/wiki/Painted_turtle"
 
-      Spiny softshells begin mating between ages 8 and 10. A large female turtle may live up to 50 years.The turtles mate in mid - to - late spring in deep water.The male will nudge the female's head while swimming, and if she chooses to mate, the male will swim above the female without clasping her with his claws (unlike other turtles). A few months later, the female turtle quickly lays her eggs along a sunny sandbar or gravel bank in a flask-shaped cavity she has dug close to the water. The turtle nests more than once during a single season. She can lay between 9 and 38 round, calcareous-shelled eggs. The eggs are laid around August and September, and they hatch in the spring. Unlike in other turtles, in the spiny softshell turtle, the sex of the hatchlings is not determined by temperature variations; it is determined by genetics."
+  },
+     {
+    "id": "spotted",
+    "fullName": "Spotted Turtle",
+    "sciName": "Clemmys guttata",
+    "size": "7.5-10.8 inches (9-27.3 cm) in length",
+    "status": "Species of special concern",
+     "habitat":"Marshes, wet meadows, swamps, bogs, and shallow borders of ponds, lakes and streams.",
+    "description": "The spotted turtle is small and has a gray to black base color. Its upper shell is smooth, does not have a central ridge running down the middle. It is also totally black and contains anywhere from zero to about one hundred yellow spots, which are a defining characteristic of this turtle. The head is black and the upper jaw is notched. On each side of the head is a large orange blotch. Hatchlings resemble the adults closely. Consistently, each segment of the upper shell has only one yellow spot.",
+    "info": "Although perhaps inconsequential, it has been found that the left side of the upper shell has more spots than the right. Also, females have more spots than males (on average). The spots on spotted turtles vary greatly throughout their range. They can have up to a hundred spots, while some have no spots at all. The spotted turtle is one species whose sex is determined by temperature during embryonic development. Some researchers have claimed that global warming may deleteriously impact population sex ratios. Spotted turtles shed their scutes in small pieces occasionally resulting in completely smooth shelled specimens. These are very intelligent turtles and have been tested like the Wood Turtles in mazes and have been proven to have the brain capacity of a mouse. These turtles are only active in the cooler spring months. The spotted turtle is declining throughout eastern Northern America due to habitat loss and poaching.",
+     "photoLink":"https://commons.wikimedia.org/wiki/User:Davepape",
+     "photoAuthor":"DAVE PAPE",
+     "infoLink":"https://en.wikipedia.org/wiki/Spotted_turtle"
+
+  },
+     {
+    "id": "redbelly",
+    "fullName": "Norther Redbelly Cooter",
+    "sciName": "Pseudemys rubriventris rubriventris",
+    "size": "10-12.5 inches (25.4-32 cm) in length",
+    "status": "Threatened Species",
+     "habitat":"Large lakes, ponds, slow-moving rivers, creeks and marshes.",
+    "description": "Large aquatic species. The upper shell is brown or black and usually has red and black markings with a spot in the center. The underside varies from pink to red. The head, neck, legs and tail have yellow stripes. The shell is smooth with slight notching above the tail.",
+    "info": "The potential threats to red-bellied turtle populations are numerous. For example: wetland loss, habitat fragmentation, pollution, collecting of turtles for pets, food or other trophies, competition with the invasive red-eared slider turtle for food, habitat, basking sites or nesting sites, and the potential for hybridization with red-eared slider turtles.",
+     "photoLink":"https://en.wikipedia.org/wiki/Northern_red-bellied_cooter#/media/File:Northern_red-bellied_cooter.jpg",
+     "photoAuthor":"JERE7MY",
+     "infoLink":"https://en.wikipedia.org/wiki/Northern_red-bellied_cooter"
 
   }
-}
+]
