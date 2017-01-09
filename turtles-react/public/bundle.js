@@ -49,10 +49,10 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
 	var Turtle = __webpack_require__(178);
-	var TurtleMaker = __webpack_require__(180);
-	var Hills = __webpack_require__(181);
-	var Ground = __webpack_require__(182);
-	__webpack_require__(183);
+	var TurtleMaker = __webpack_require__(182);
+	var Hills = __webpack_require__(183);
+	var Ground = __webpack_require__(184);
+	__webpack_require__(185);
 
 	var Main = React.createClass({
 	  displayName: 'Main',
@@ -64,10 +64,11 @@
 	      React.createElement(
 	        'h2',
 	        null,
-	        'Turtles of Pennsylvania'
+	        ' Turtles of Pennsylvania'
 	      ),
 	      React.createElement(Hills, null),
 	      React.createElement(Ground, null),
+	      React.createElement('div', { id: 'infoContainer' }),
 	      React.createElement(TurtleMaker, null)
 	    );
 	  }
@@ -21511,6 +21512,40 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
 
+	var PhotoHolder = React.createFactory(__webpack_require__(180));
+	var TurtleInfo = React.createFactory(__webpack_require__(181));
+	var turtleId;
+
+	var infoStyle = {
+	  background: "#fff",
+	  height: "100%",
+	  width: "auto",
+	  zIndex: 2,
+	  position: "absolute",
+	  textAlign: "center",
+	  color: "#000",
+	  fontSize: "2vw",
+	  fontFamily: "Roboto",
+	  wordWrap: "break-word",
+	  lineHeight: "160%"
+	};
+
+	var dismissButton = {
+
+	  position: "absolute",
+	  width: "35px",
+	  height: "35px",
+	  top: "10px",
+	  right: "10px"
+
+	};
+
+	var dismissButtonImg = {
+
+	  maxWidth: "100%",
+	  maxHeight: "100%"
+	};
+
 	var turtle = function (_React$Component) {
 	  _inherits(turtle, _React$Component);
 
@@ -21519,42 +21554,36 @@
 
 	    var _this = _possibleConstructorReturn(this, (turtle.__proto__ || Object.getPrototypeOf(turtle)).call(this, props));
 
-	    console.log("props.id in turtle.jsx constructor=  " + props.id);
+	    turtleId = props.id;
 
-	    _turtleInfo2.default.map(function (data) {
-	      if (props.id.localeCompare(data.id) === 0) {
-	        var name = data.fullName;
-	        console.log(data.fullName);
-	        _this.state({ fullName: "" });
-	      }
-	    });
 	    return _this;
 	  }
 
 	  _createClass(turtle, [{
 	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      var _this2 = this;
-
-	      _turtleInfo2.default.map(function (data) {
-	        if (nextProps.id.localeCompare(data.id) === 0) {
-	          var name = data.fullName;
-	          console.log(data.fullName);
-	          _this2.setState({ fullName: name });
-	        }
-	      });
+	    value: function componentWillReceiveProps(nextProps) {}
+	  }, {
+	    key: 'buttonClick',
+	    value: function buttonClick() {
+	      ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-
-	      var id = this.state.fullName;
-	      console.log(id);
+	      var _this2 = this;
 
 	      return React.createElement(
 	        'div',
-	        { id: 'name' },
-	        ' Name: '
+	        { id: 'infoDiv', style: infoStyle },
+	        React.createElement(
+	          'div',
+	          { className: 'dismissButton', style: dismissButton, onClick: function onClick() {
+	              return _this2.buttonClick();
+	            } },
+	          React.createElement('img', { style: dismissButtonImg, src: './images/dismiss-button.png' })
+	        ),
+	        React.createElement(PhotoHolder, { id: turtleId }),
+	        React.createElement(TurtleInfo, { id: turtleId })
 	      );
 	    }
 	  }]);
@@ -21620,6 +21649,110 @@
 			"photoLink": "https://en.wikipedia.org/wiki/Northern_red-bellied_cooter#/media/File:Northern_red-bellied_cooter.jpg",
 			"photoAuthor": "JERE7MY",
 			"infoLink": "https://en.wikipedia.org/wiki/Northern_red-bellied_cooter"
+		},
+		{
+			"id": "wood",
+			"fullName": "Wood Turtle",
+			"sciName": "Glyptemys insculpta",
+			"size": "5.5 to 7.9 inches (14 to 20 cm)",
+			"status": "Species of special concern",
+			"habitat": "Wood turtles spends a great deal of time in or near the water of wide rivers, preferring shallow, clear streams with compacted and sandy bottoms. The wood turtle can also be found in forests and grasslands, but will rarely be seen more than several hundred meters from flowing water. It is diurnal and is not overtly territorial.",
+			"description": "Morphologically, the wood turtle is similar to the bog turtle, spotted turtle, and Blanding's turtle.its defining characteristic being the pyramidal pattern on its upper shell. The wood turtle's plastron (ventral shell) is yellowish in color and has dark patches. The posterior margin of the plastron terminates in a V-shaped notch. Although sometimes speckled with yellowish spots, the upper surface of the head is often a dark gray to solid black. The ventral surfaces of the neck, chin, and legs are orange to red with faint yellow stripes along the lower jaw of some individuals. Seasonal variation in color vibrancy have been known to occur.",
+			"info": "The wood turtle is omnivorous and is capable of eating on land or in water. On an average day, a wood turtle will move 108 meters (354 ft), a decidedly long distance. Many other animals that live in its habitat pose a threat to it. Raccoons are over-abundant in many places and are a direct threat to all life stages of this species. Inadvertently, humans cause a large number of deaths through habitat destruction, road traffic, farming accidents, and illegal collection. When unharmed, it can live for up to 40 years in the wild and 58 years in captivity.",
+			"photoLink": "https://commons.wikimedia.org/wiki/User:Ltshears",
+			"photoAuthor": "TRISHA SHEARS",
+			"infoLink": "https://en.wikipedia.org/wiki/Wood_turtle"
+		},
+		{
+			"id": "bog",
+			"fullName": "Bog Turtle",
+			"sciName": "Glyptemys muhlenbergii",
+			"size": "4 inches (10 cm)",
+			"status": "Endangered",
+			"habitat": "Bog turtles prefer calcareous wetlands (areas containing lime), including meadows, bogs, marshes, and spring seeps, that have both wet and dry regions. Their habitat is often on the edge of woods. Bog turtles have sometimes been seen in cow pastures and near beaver dams.",
+			"description": " The bog turtle is the smallest species of turtle in North America. It does not have a prominent snout. Its head is dark brown to black; however, it has a bright yellow, orange, or red spot on each side of its neck. The bog turtle has a dark skin color with an orange-red wash on the inside of the legs of some individuals. The carapace is domed and rectangular in shape, and it tends to be narrower toward the head and wider toward the tail.The carapace often has easily identifiable rings on the rough scales or scutes.The scutes may also have a radiating arrangement of lines. In some older individuals, and those that burrow frequently in coarse substrates, the shell may be smooth.Although generally black, a chestnut sunburst pattern in each scute is sometimes present on the carapace.The belly of the shell is also a dark brown to black color with light marks present.",
+			"info": "Protected under the United States Federal Endangered Species Act,the bog turtle is considered threatened in Connecticut, Delaware, Maryland, Massachusetts, New Jersey, New York and Pennsylvania as of November 4, 1997. The invasion of non-native plants into its habitat is a large threat to the bog turtles' survival. Although several plants disrupt its ecosystem, the three primary culprits are purple loosestrife, reed canary grass, and reeds, which grow thick and tall and are believed to hinder the movement of the turtles. Such plants also out-compete the native species in the bog turtle's habitat, thus reducing the amount of food and protection available to the turtles. The development of new neighborhoods and roadways obstructs the bog turtle's movement between wetlands, thus inhibiting the establishment of new bog turtle colonies. Pesticides, runoff, and industrial discharge are all harmful to the bog turtles' habitat and food supply. The bog turtle has been designated as a threatened species to conserve the northern population of the bog turtle, which has seriously declined in the northeast United States. The bog turtle was noted in the 18th century by Gotthilf Heinrich Ernst Muhlenberg, a self-taught botanist and clergyman. Muhlenberg, who named more than 150 North American plant species, was conducting a survey of the flora of Lancaster County, Pennsylvania, when he discovered the small turtle.",
+			"photoLink": "http://digitalmedia.fws.gov/cdm/",
+			"photoAuthor": "R.G.TUCKER",
+			"infoLink": "https://en.wikipedia.org/wiki/Bog_turtle"
+		},
+		{
+			"id": "blandings",
+			"fullName": "Blanding's Turtle",
+			"sciName": "Emydoidea blandingii",
+			"size": "10.0 inches (25.5 cm)",
+			"status": "Species of special concern",
+			"habitat": "Poorly drained lowlands, marshes, wet meadows, ponds, and slow-moving streams.",
+			"description": "A distinguishing feature of this turtle is the bright yellow chin and throat. The carapace, or upper shell, is domed, but slightly flattened along the midline, and is oblong when viewed from above. The carapace is speckled with numerous yellow or light-colored flecks or streaks on a dark background. The plastron, or lower shell, is yellow with dark blotches symmetrically arranged. The head and legs are dark, and usually speckled or mottled with yellow.",
+			"info": "Historically, the Blanding’s Turtle was found only in Erie and Crawford Counties in the northwest part of the state, but with the flooding of Pymatuning Swamp and development of towns in its range, the Blanding’s Turtle may no longer reside in Pennsylvania at all. Breeding populations haven’t been documented in much of its historic range in over 100 years. Blanding's turtles do not appear to age once they have reached adulthood.",
+			"photoLink": "https://commons.wikimedia.org/wiki/User:Chaparraltree",
+			"photoAuthor": "RAPHEAL CARTER",
+			"infoLink": "https://en.wikipedia.org/wiki/Blanding's_turtle"
+		},
+		{
+			"id": "map",
+			"fullName": "Map Turtle",
+			"sciName": "Graptemys geographica",
+			"size": "7.5-10.8 inches (9-27.3 cm) in length",
+			"status": "Species of special concern",
+			"habitat": "The northern map turtle inhabits ponds, rivers, and lakes. They prefer large bodies of water and areas with fallen trees and other debris for basking. These turtles are more often found in rivers than in lakes or ponds.",
+			"description": "The northern map turtle gets both its common and scientific names from the marking on the skin and carapace. The light markings resemble contour lines on a map or chart. The lines on the carapace are shades of yellow, tan, or orange and are surrounded by dark borders. The rest of the carapace is olive or greyish brown. The carapace has a hydrodynamic appearance and is broad with a moderately low keel. The rear of the carapace is flared and the rear marginals form serrations. The plastron is yellowish and is marked by a central dark blotch. The head, neck and limbs are dark olive, brown, or black with thin yellow or green stripes. There is an oval or triangular spot located behind the eye. Females of this species are much larger than males.",
+			"info": "Map turtles are considered habitat specialists and may be replaced by a more tolerant species when their habitat is altered. Unfortunately the effects of human interference by way boating and recreation on shorelines are likely impeding the map turtle from re-establishing itself in natural areas. Map turtles are avid baskers and bask in groups. They are diurnal. They are also very wary animals; at the slightest hint of danger, they slip into the water and hide.",
+			"photoLink": "https://commons.wikimedia.org/wiki/User:Dger",
+			"photoAuthor": "GORDON E. ROBERTSON",
+			"infoLink": "https://en.wikipedia.org/wiki/Northern_map_turtle"
+		},
+		{
+			"id": "mud",
+			"fullName": "Eastern Mud Turtle",
+			"sciName": "Kinosternon subrubrum",
+			"size": "3-5 inches (7-10 cm) in length",
+			"status": "Species of Special Concern",
+			"habitat": "Eastern mud turtles live in ponds and other freshwater habitats.",
+			"description": "The eastern mud turtle is a small and often hard to identify species. The carapace is keelless, lacks any pattern, and varies in color from yellowish to black. The plastron is large and double hinged, and can be yellowish to brown, and may sometimes have a dark pattern. The chin and throat are a yellowish grey, streaked and mottled with brown, while the limbs and tail are grayish. The eye, or iris, of the eastern mud turtle is yellow with dark clouding, and its feet are webbed.",
+			"info": "Mud turtles feed mainly on insects and small fish. Raccoons are known to eat this species' eggs, while herons and alligators often hunt the adults. This species is also exploited to the pet trade.",
+			"photoLink": "https://www.flickr.com/people/50838842@N06",
+			"photoAuthor": "U.S. FISH AND WILDLIFE SERVICE HEADQUARTERS",
+			"infoLink": "https://en.wikipedia.org/wiki/Eastern_mud_turtle"
+		},
+		{
+			"id": "snapping",
+			"fullName": "Common Snapping Turtle",
+			"sciName": "Chelydra serpentina",
+			"size": "8-18.5 inches (20-47 cm) in length",
+			"status": "Abundant",
+			"habitat": "Common habitats are shallow ponds or streams. Some may inhabit brackish environments, such as estuaries. Common snapping turtles sometimes bask—though rarely observed—by floating on the surface with only their carapaces exposed, though in the northern parts of their range, they also readily bask on fallen logs in early spring.",
+			"description": " The common snapping turtle has a rugged, muscular build with ridged carapaces (though ridges tend to be more pronounced in younger individuals). The upper shell length in adulthood may be nearly 50 cm (20 in), though 25–47 cm (9.8–18.5 in), is more common. C. serpentina usually weighs 4.5–16 kg (9.9–35.3 lb). Per one study, breeding common snapping turtles were found to average 28.5 cm (11.2 in) in carapace length, 22.5 cm (8.9 in) in plastron length and weigh about 6 kg (13 lb). Males are larger than females, with almost all animals weighing in excess of 10 kg (22 lb) being male and quite old, as the species continues to grow throughout life.",
+			"info": " In their environment, they are at the top of the food chain, causing them to feel less fear or aggression. When they encounter a species unfamiliar to them such as humans, in rare instances, they will become curious and survey the situation and even more rarely may bump their nose on a leg of the person standing in the water. Although snapping turtles have fierce dispositions, when they are encountered in the water or a swimmer approaches, they will slip quietly away from any disturbance or may seek shelter under mud or grass nearby. Common snapping turtles are very aggressive if caught, and have a strong enough bite to easily cut off human fingers.",
+			"photoLink": "https://en.wikipedia.org/wiki/Common_snapping_turtle",
+			"photoAuthor": "DAKOTA L.",
+			"infoLink": "https://en.wikipedia.org/wiki/Common_snapping_turtle"
+		},
+		{
+			"id": "box",
+			"fullName": "Eastern Box Turtle",
+			"sciName": "Terrapene carolina carolina",
+			"size": "5-8 inches (12.7-20 cm) in length",
+			"status": "Species of special concern",
+			"habitat": "Eastern box turtles prefer deciduous or mixed forested regions, with a moderately moist forest floor that has good drainage. Bottomland forest is preferred over hillsides and ridges. They can also be found in open grasslands, pastures, or under fallen logs or in moist ground, usually moist leaves or wet dirt. They have also been known to take 'baths' in shallow streams and ponds or puddles, and during hot periods may submerge in mud for days at a time.",
+			"description": " Eastern box turtles have a high, dome-like carapace and a hinged plastron that allows total shell closure. The carapace can be of variable coloration, but is normally found brownish or black and is accompanied by a yellowish or orangish radiating patternof lines, spots or blotches. Skin coloration, like that of the shell, is variable, but is usually brown or black with some yellow, orange, red, or white spots or streaks. Furthermore, males normally possess red eyes (irises) whereas females usually display brown eyes. Eastern box turtles feature a sharp, horned beak, stout limbs, and their feet are webbed only at the base. Eastern box turtles have 5 toes on each front leg, and normally 4 toes on each hind leg, although some individuals may possess 3 toes on each hind leg.",
+			"info": "In the captivity, box turtles are known to live over 100 years, but in the wild, often live much shorter lives due to disease and predation.",
+			"photoLink": "https://en.wikipedia.org/wiki/Eastern_box_turtle",
+			"photoAuthor": "NO AUTHOR LISTED",
+			"infoLink": "https://en.wikipedia.org/wiki/Eastern_box_turtle"
+		},
+		{
+			"id": "musk",
+			"fullName": "Common Musk Turtle",
+			"sciName": "Sternotherus odoratus",
+			"size": " 2 - 5 inches (5.1 - 11.5 cm)",
+			"status": "Abundant",
+			"habitat": "This turtle is found in a variety of wetland habitats and littoral zones, particularly shallow watercourses with a slow current and muddy bottom. Although they are more aquatic than some turtles, they are also capable of climbing, and may be seen basking on fallen trees and woody debris. Fallen trees and coarse woody debris are known to be important components of wetland habitat, and may be particularly beneficial to basking turtles.",
+			"description": "Musk Turtles are small black, grey or brown turtles with highly domed shells. They have long necks and rather short legs. The yellow lines on the neck are a good field marker, and often can be seen from above in swimming turtles. Males can usually be distinguished from females by their significantly longer tails and by the spike that protrudes at the end of the tail.",
+			"info": "The musk turtle is also known as the stinkpot due to its ability to release a foul musky odor from scent glands on the edge of its shell, possibly to deter predation. Their tiny tongues are covered in bud-like papillae that allow them to respire underwater. Wild musk turtles often will not hesitate to bite if harassed. A musk turtle's neck can extend as far as its hind feet; caution is required when handling one.",
+			"photoLink": "https://en.wikipedia.org/wiki/Sternotherus_odoratus",
+			"photoAuthor": "ONTLEY",
+			"infoLink": "https://en.wikipedia.org/wiki/Sternotherus_odoratus"
 		}
 	];
 
@@ -21639,7 +21772,244 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
+	var turtlePic;
+	var turtleMap;
+
+	var photoHolderStyle = {
+	  display: "table",
+	  width: "100%",
+	  tableLayout: "fixed"
+	};
+
+	var photoHolderImg = {
+	  margin: "0 auto",
+	  padding: "0",
+	  maxWidth: "50%",
+	  height: "auto"
+	};
+
+	var photoHolder = function (_React$Component) {
+	  _inherits(photoHolder, _React$Component);
+
+	  function photoHolder(props) {
+	    _classCallCheck(this, photoHolder);
+
+	    var _this = _possibleConstructorReturn(this, (photoHolder.__proto__ || Object.getPrototypeOf(photoHolder)).call(this, props));
+
+	    turtlePic = "./images/" + props.id + "Photo.jpg";
+	    turtleMap = "./images/" + props.id + "Map.png";
+
+	    return _this;
+	  }
+
+	  _createClass(photoHolder, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return React.createElement(
+	        'div',
+	        { className: 'photoHolder', style: photoHolderStyle },
+	        React.createElement('img', { style: photoHolderImg, src: turtlePic }),
+	        React.createElement('img', { style: photoHolderImg, src: turtleMap })
+	      );
+	    }
+	  }]);
+
+	  return photoHolder;
+	}(React.Component);
+
+	module.exports = photoHolder;
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _turtleInfo = __webpack_require__(179);
+
+	var _turtleInfo2 = _interopRequireDefault(_turtleInfo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
+
+	var turtleId;
+	var name;
+	var sciName;
+	var size;
+	var status;
+	var habitat;
+	var description;
+	var info;
+	var photoLink;
+	var photoAuthor;
+	var infoLink;
+
+	var nameStyle = {
+	  fontFamily: "silkscreennormal",
+	  fontSize: "4vw",
+	  paddingBottom: "2vh",
+	  paddingTop: "2vh"
+	};
+
+	var sciNameStyle = {
+	  fontStyle: "italic"
+	};
+
+	var turtleInfo = function (_React$Component) {
+	  _inherits(turtleInfo, _React$Component);
+
+	  function turtleInfo(props) {
+	    _classCallCheck(this, turtleInfo);
+
+	    var _this = _possibleConstructorReturn(this, (turtleInfo.__proto__ || Object.getPrototypeOf(turtleInfo)).call(this, props));
+
+	    setTurtle(props);
+
+	    return _this;
+	  }
+
+	  _createClass(turtleInfo, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+
+	      setTurtle(nextProps);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      return React.createElement(
+	        'div',
+	        { id: 'infoCard' },
+	        React.createElement(
+	          'div',
+	          { id: 'name', style: nameStyle },
+	          ' ',
+	          name,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'sciName' },
+	          ' ',
+	          sciName,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'size' },
+	          ' Size: ',
+	          size,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'status' },
+	          ' Status: ',
+	          status,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'habitat' },
+	          ' Habitat: ',
+	          habitat,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'description' },
+	          ' Description: ',
+	          description,
+	          '  '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'info' },
+	          ' Info: ',
+	          info,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'photoLink' },
+	          ' ',
+	          photoLink,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'photoAuthor' },
+	          ' ',
+	          photoAuthor,
+	          ' '
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'infoLink' },
+	          ' ',
+	          infoLink,
+	          ' '
+	        )
+	      );
+	    }
+	  }]);
+
+	  return turtleInfo;
+	}(React.Component);
+
+	var setTurtle = function setTurtle(props) {
+
+	  _turtleInfo2.default.map(function (data) {
+
+	    if (props.id.localeCompare(data.id) === 0) {
+	      turtleId = data.id;
+	      name = data.fullName;
+	      sciName = data.sciName;
+	      size = data.size;
+	      status = data.status;
+	      habitat = data.habitat;
+	      description = data.description;
+	      info = data.info;
+	      photoLink = data.photoLink;
+	      photoAuthor = data.photoAuthor;
+	      infoLink = data.infoLink;
+	    }
+	  });
+	};
+	module.exports = turtleInfo;
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
 	var Turtle = React.createFactory(__webpack_require__(178));
+	var orientation;
+	var turtleWidth;
+	var turtleHeight;
 
 	var turtleMaker = function (_React$Component) {
 		_inherits(turtleMaker, _React$Component);
@@ -21650,6 +22020,7 @@
 			var _this = _possibleConstructorReturn(this, (turtleMaker.__proto__ || Object.getPrototypeOf(turtleMaker)).call(this, props));
 
 			_this.handleClick = _this.handleClick.bind(_this);
+			setOrientation();
 			return _this;
 		}
 
@@ -21658,7 +22029,13 @@
 			value: function handleClick(id) {
 				console.log('turtleMaker handleClick(id) is:', id);
 				localStorage.setItem("currentTurtle", id);
-				ReactDOM.render(React.createElement(Turtle, { id: id }), document.getElementById('hills'));
+				ReactDOM.render(React.createElement(Turtle, { id: id }), document.getElementById('infoContainer'));
+			}
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(nextProps) {
+
+				setOrientation();
 			}
 		}, {
 			key: 'render',
@@ -21673,7 +22050,7 @@
 					paddingRight: "1vw",
 					paddingLeft: "1vw",
 					//   backgroundColor: "#ffde00",
-					width: "21%",
+					width: turtleWidth,
 					height: "20%",
 					float: "left"
 
@@ -21702,7 +22079,7 @@
 
 				return React.createElement(
 					'div',
-					{ className: 'turtleContainer', style: turtleContainer },
+					{ id: 'turtleContainer', className: 'turtleContainer', style: turtleContainer },
 					' ',
 					names.map(function (turtle) {
 						var _this2 = this;
@@ -21725,10 +22102,26 @@
 		return turtleMaker;
 	}(React.Component);
 
+	var setOrientation = function setOrientation() {
+
+		if (window.screen.height > window.screen.width * 1.2) {
+			//portrait =1			
+			orientation = 1;
+			turtleWidth = "31%";
+			localStorage.setItem("orientation", 1);
+			console.log("portrait");
+		} else {
+			//landscape = 0
+			orientation = 0;
+			turtleWidth = "21%";
+			localStorage.setItem("orientation", 0);
+		}
+	};
+
 	module.exports = turtleMaker;
 
 /***/ },
-/* 181 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21760,48 +22153,92 @@
 	module.exports = hills;
 
 /***/ },
-/* 182 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
+	var orientation;
+	var groundTop;
+	var groundHeight;
 
-	var ground = React.createClass({
-	    displayName: 'ground',
+	var ground = function (_React$Component) {
+		_inherits(ground, _React$Component);
 
-	    render: function render() {
+		function ground(props) {
+			_classCallCheck(this, ground);
 
-	        var groundStyle = {
-	            zIndex: "-2",
-	            position: "absolute",
-	            display: "block",
-	            top: "25%",
-	            height: "78%",
-	            width: "100%",
-	            margin: 0,
-	            padding: 0
+			var _this = _possibleConstructorReturn(this, (ground.__proto__ || Object.getPrototypeOf(ground)).call(this, props));
 
-	        };
+			setOrientation();
 
-	        return React.createElement('div', { id: 'ground', style: groundStyle });
-	    }
-	});
+			return _this;
+		}
+
+		_createClass(ground, [{
+			key: 'render',
+			value: function render() {
+
+				var groundStyle = {
+					zIndex: "-2",
+					position: "absolute",
+					display: "block",
+					top: groundTop,
+					height: groundHeight,
+					width: "100%",
+					margin: 0,
+					padding: 0
+
+				};
+
+				return React.createElement('div', { id: 'ground', style: groundStyle });
+			}
+		}]);
+
+		return ground;
+	}(React.Component);
+
+	;
+
+	var setOrientation = function setOrientation() {
+		if (window.screen.height > window.screen.width * 1.3) {
+			//portrait =1			
+			orientation = 1;
+			groundTop = "18%";
+			groundHeight = "88%";
+			localStorage.setItem("orientation", 1);
+		} else {
+			//landscape = 0
+			orientation = 0;
+			groundTop = "25%";
+			groundHeight = "78%";
+			localStorage.setItem("orientation", 0);
+		}
+	};
 
 	module.exports = ground;
 
 /***/ },
-/* 183 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(184);
+	var content = __webpack_require__(186);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(198)(content, {});
+	var update = __webpack_require__(200)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -21818,21 +22255,21 @@
 	}
 
 /***/ },
-/* 184 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(185)();
+	exports = module.exports = __webpack_require__(187)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background-color: #2B99FF;\n  overflow: hidden;\n  background-repeat: repeat; }\n\nh2 {\n  position: relative;\n  letter-spacing: 8px;\n  font-size: 3.2vw;\n  color: #fff;\n  background-color: transparent;\n  font-family: silkscreennormal;\n  text-align: center; }\n\n#hillWrapper {\n  background-color: #2B99FF; }\n\n#ground {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(186) + ");\n  background-blend-mode: multiply; }\n\n.turtleContainer {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(186) + ");\n  background-blend-mode: multiply; }\n\n@font-face {\n  font-family: 'silkscreenbold';\n  src: url(" + __webpack_require__(187) + ");\n  src: url(" + __webpack_require__(187) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(188) + ") format(\"woff\"), url(" + __webpack_require__(189) + ") format(\"truetype\"), url(" + __webpack_require__(190) + "#silkscreenbold) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'silkscreennormal';\n  src: url(" + __webpack_require__(191) + ");\n  src: url(" + __webpack_require__(191) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(192) + ") format(\"woff\"), url(" + __webpack_require__(193) + ") format(\"truetype\"), url(" + __webpack_require__(194) + "#silkscreennormal) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Blenda Script';\n  src: url(" + __webpack_require__(195) + ");\n  src: url(" + __webpack_require__(195) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(196) + ") format(\"woff\"), url(" + __webpack_require__(197) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background-color: #2B99FF;\n  overflow: hidden;\n  background-repeat: repeat; }\n\nh2 {\n  position: relative;\n  letter-spacing: 8px;\n  font-size: 3.2vw;\n  color: #fff;\n  background-color: transparent;\n  font-family: silkscreennormal;\n  text-align: center; }\n\n#hillWrapper {\n  background-color: #2B99FF; }\n\n#ground {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(188) + ");\n  background-blend-mode: multiply; }\n\n.turtleContainer {\n  background-color: #67A256;\n  background-image: url(" + __webpack_require__(188) + ");\n  background-blend-mode: multiply; }\n\n@font-face {\n  font-family: 'silkscreenbold';\n  src: url(" + __webpack_require__(189) + ");\n  src: url(" + __webpack_require__(189) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(190) + ") format(\"woff\"), url(" + __webpack_require__(191) + ") format(\"truetype\"), url(" + __webpack_require__(192) + "#silkscreenbold) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'silkscreennormal';\n  src: url(" + __webpack_require__(193) + ");\n  src: url(" + __webpack_require__(193) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(194) + ") format(\"woff\"), url(" + __webpack_require__(195) + ") format(\"truetype\"), url(" + __webpack_require__(196) + "#silkscreennormal) format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Blenda Script';\n  src: url(" + __webpack_require__(197) + ");\n  src: url(" + __webpack_require__(197) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(198) + ") format(\"woff\"), url(" + __webpack_require__(199) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 185 */
+/* 187 */
 /***/ function(module, exports) {
 
 	/*
@@ -21888,79 +22325,79 @@
 
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.eot";
 
 /***/ },
-/* 188 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.woff";
 
 /***/ },
-/* 189 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.ttf";
 
 /***/ },
-/* 190 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscrb-webfont.svg";
 
 /***/ },
-/* 191 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.eot";
 
 /***/ },
-/* 192 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.woff";
 
 /***/ },
-/* 193 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.ttf";
 
 /***/ },
-/* 194 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/slkscr-webfont.svg";
 
 /***/ },
-/* 195 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/BlendaScript.eot";
 
 /***/ },
-/* 196 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/BlendaScript.woff";
 
 /***/ },
-/* 197 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "fonts/BlendaScript.ttf";
 
 /***/ },
-/* 198 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

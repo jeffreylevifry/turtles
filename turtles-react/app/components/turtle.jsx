@@ -1,7 +1,41 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 import data from 'json!../../public/turtleInfo.json';
+var PhotoHolder = React.createFactory(require('./photoHolder.jsx'));
+var TurtleInfo = React.createFactory(require('./turtleInfo.jsx'));
+var turtleId;
 
+
+
+var infoStyle = {
+  background: "#fff",
+  height: "100%",
+  width:"auto",
+  zIndex: 2,
+  position: "absolute",
+  textAlign: "center",
+	color: "#000",
+	fontSize: "2vw",
+	fontFamily: "Roboto",
+	wordWrap: "break-word",
+	lineHeight: "160%"
+};
+
+var dismissButton = {
+
+	position: "absolute",
+	width:"35px",
+	height:"35px",
+	top:"10px",
+	right:"10px",
+
+};
+  
+var dismissButtonImg = {
+
+	maxWidth:"100%",
+	maxHeight:"100%"
+};
 
 
 
@@ -9,57 +43,41 @@ class turtle extends React.Component {
 
 
   constructor(props) {
-    
+
     super(props);
 
-    console.log("props.id in turtle.jsx constructor=  "+props.id);
-
-    data.map((data) => {
-      if (props.id.localeCompare(data.id) === 0) {
-        var name = data.fullName;
-        console.log(data.fullName);
-        this.state(
-          {fullName:""}
-        );
+  turtleId =props.id;
 
 
-      }
-
-    })
   }
 
-  
+
   componentWillReceiveProps(nextProps) {
 
-    data.map((data) => {
-      if (nextProps.id.localeCompare(data.id) === 0) {
-        var name = data.fullName;
-        console.log(data.fullName);
-        this.setState(
-          {fullName: name}
-        );
 
 
-      }
 
-    })
   }
 
+	buttonClick() {
+		ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
 
-
-
+	}
 
 
   render() {
-
-
-    var id = this.state.fullName;
-    console.log(id);
+    
+   
 
     return (
 
-
-      <div id = "name" > Name: </div>
+      <div id = "infoDiv" style={infoStyle} >
+            <div className="dismissButton" style={dismissButton} onClick={() => this.buttonClick()}   >
+              <img style={dismissButtonImg} src="./images/dismiss-button.png"></img>
+    </div>
+        <PhotoHolder id ={turtleId} />
+     <TurtleInfo id={turtleId}/>
+      </div>
     );
   }
 }

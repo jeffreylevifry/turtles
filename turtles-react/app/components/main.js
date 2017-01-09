@@ -12,15 +12,14 @@ var Main = React.createClass({
     render: function() {
     return (
       <div>
-              <h2>
-            Turtles of Pennsylvania
+      <h2> Turtles of Pennsylvania 
       </h2>
       <Hills/>
       <Ground/>
-     
+     <div id="infoContainer"></div>
       <TurtleMaker/>
-        
-      </div>
+        </div>
+      
         )
     }
 });

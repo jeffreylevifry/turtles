@@ -1,22 +1,33 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Turtle = React.createFactory(require('./turtle.jsx'));
+var orientation;
+var turtleWidth;
+var turtleHeight;
 
 class turtleMaker extends React.Component{
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+	setOrientation();
   }
 
 	handleClick(id) {
 		console.log('turtleMaker handleClick(id) is:', id);
 		localStorage.setItem("currentTurtle", id);
-		ReactDOM.render(<Turtle id ={id} />, document.getElementById('hills'));
+		ReactDOM.render(<Turtle id ={id} />, document.getElementById('infoContainer'));
 	}
+  componentWillReceiveProps(nextProps) {
 
+    setOrientation();
+
+
+  }
 
 
 	render() {
+		
+		
 
 		var turtleStyle = {
 			position: "relative",
@@ -27,7 +38,7 @@ class turtleMaker extends React.Component{
 			paddingRight: "1vw",
 			paddingLeft: "1vw",
 			//   backgroundColor: "#ffde00",
-			width: "21%",
+			width: turtleWidth,
 			height: "20%",
 			float: "left"
 
@@ -59,9 +70,9 @@ class turtleMaker extends React.Component{
 
 
 		return ( 
-			
 
-			<div className = "turtleContainer"style = {turtleContainer} > {
+			
+			<div id="turtleContainer" className = "turtleContainer"style = {turtleContainer} > {
 				names.map(function(turtle) {
 
 					var turtleImgConcat = ('images/' + turtle + '.gif').toString();
@@ -87,7 +98,21 @@ class turtleMaker extends React.Component{
 	}
 }
 
+const setOrientation = () => {
 
+		if (window.screen.height > (window.screen.width)*1.2){
+			//portrait =1			
+			orientation = 1;
+			turtleWidth = "31%"
+			localStorage.setItem("orientation", 1);
+			console.log("portrait");
+		}else{
+			//landscape = 0
+			orientation = 0;
+			turtleWidth = "21%"
+			localStorage.setItem("orientation", 0);
+		}
+}
 	
 
 
