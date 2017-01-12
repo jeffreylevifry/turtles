@@ -13,12 +13,8 @@ var infoStyle = {
   width:"auto",
   zIndex: 2,
   position: "absolute",
-  textAlign: "center",
-	color: "#000",
-	fontSize: "2vw",
-	fontFamily: "Roboto",
-	wordWrap: "break-word",
-	lineHeight: "160%"
+	overflowY: "scroll"
+	
 };
 
 var dismissButton = {
@@ -52,8 +48,7 @@ class turtle extends React.Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
-
+  componentDidMount() {
 
 
 
@@ -73,7 +68,7 @@ class turtle extends React.Component {
 
       <div id = "infoDiv" style={infoStyle} >
             <div className="dismissButton" style={dismissButton} onClick={() => this.buttonClick()}   >
-              <img style={dismissButtonImg} src="./images/dismiss-button.png"></img>
+              <img style={dismissButtonImg} src="./images/dismiss-green.png"></img>
     </div>
         <PhotoHolder id ={turtleId} />
      <TurtleInfo id={turtleId}/>

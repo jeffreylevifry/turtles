@@ -6,7 +6,12 @@ var Hills = require('./hills.jsx');
 var Ground = require('./ground.jsx');
 require('../../public/main.scss');
 
+	  function componentDidMount() {
+console.log("orientation CHanged");
+window.addEventListener('resize', () => this.forceUpdate());
 
+
+  }
 
 var Main = React.createClass({
     render: function() {

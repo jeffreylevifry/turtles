@@ -1,6 +1,50 @@
 	
 $sky-blue: #2B99FF;
 $earth-green: #67A256;
+$slate-grey: #545454;
+
+@media screen and (orientation: landscape){
+	.turtle {
+		width: 21%;
+		height: 20%;
+	}
+	#ground {
+		top: 26%;
+		height: 78%;
+	}
+	h2{
+		font-size:6.2vh;
+	}
+}
+
+@media screen and (orientation: portrait){
+	.turtle {
+		width: 31%;
+		height: 18%;
+	}
+	#ground {
+		top: 26%;
+		height: 78%;
+	}
+	h2{
+		font-size:5vw;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	
+		#ground {
+		top: 17%;
+		height: 78%;
+	}
+}
+
+
+
+a{
+	color: $slate-grey;
+}
 
 body {
 	margin: 0;
@@ -15,7 +59,7 @@ body {
 h2 {
 	position: relative;
 		letter-spacing: 8px;
-		font-size:3.2vw;
+		
   color: #fff;
 	background-color:transparent;
 	font-family: silkscreennormal;

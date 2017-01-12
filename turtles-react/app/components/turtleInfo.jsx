@@ -1,5 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Title = require('./titleStyler.jsx');
+var Attribution = require('./attribution.jsx');
 import data from 'json!../../public/turtleInfo.json';
 var turtleId;
 var name;
@@ -9,19 +11,32 @@ var status;
 var habitat;
 var description;
 var info;
-var photoLink;
-var photoAuthor;
-var infoLink;
+
 
 var nameStyle = {
 	fontFamily: "silkscreennormal",
-	fontSize:"4vw",
+	fontSize:"5vw",
 	paddingBottom:"2vh",
 	paddingTop:"2vh"
 };
 
+var infoCard = {
+	paddingLeft: "1vw",
+	paddingRight: "1vw",
+	  textAlign: "center",
+	color: "#000",
+	fontSize: "1.95vw",
+	fontFamily: "Roboto",
+	wordWrap: "break-word",
+	lineHeight: "160%",
+	
+}
+
 var sciNameStyle = {
- fontStyle: "italic"
+ fontStyle: "italic",
+ fontSize:"2.5vw",
+	paddingTop:"1vh",
+	paddingBottom:"1vh"
 };
 
 class turtleInfo extends React.Component {
@@ -53,17 +68,15 @@ class turtleInfo extends React.Component {
 
     return (
 
-			<div id = "infoCard" >
+			<div id = "infoCard" style={infoCard} >
       <div id = "name" style={nameStyle}> {name} </div> 
-      <div id = "sciName" > {sciName} </div> 
-      <div id = "size" > Size: {size} </div> 
-      <div id = "status" > Status: { status} </div> 
-      <div id = "habitat" > Habitat: {habitat} </div> 
-      <div id = "description"> Description: {description}  </div>
-      <div id = "info" > Info: {info} </div>
-      <div id = "photoLink" > {photoLink } </div>
-      <div id = "photoAuthor" > {photoAuthor} </div> 
-      <div id = "infoLink" > {infoLink} </div> 
+			<div id = "sciName" style={sciNameStyle} > {sciName} </div> 
+      <div id = "size" > <Title name="SIZE:" /> {size} </div> 
+      <div id = "status" ><Title name="STATUS:" /> { status} </div> 
+      <div id = "habitat" > <Title name="HABITAT:" /> {habitat} </div> 
+      <div id = "description"> <Title name= "DESCRIPTION:" /> {description}  </div>
+      <div id = "info" > <Title name= "INFO:" /> {info} </div>
+			<div ><Attribution id={turtleId} /> </div> 
       </div>
     );
   }
@@ -83,9 +96,7 @@ const setTurtle = (props) => {
       habitat = data.habitat;
       description = data.description;
       info = data.info;
-      photoLink = data.photoLink;
-      photoAuthor = data.photoAuthor;
-      infoLink = data.infoLink;
+
 
     }
   })

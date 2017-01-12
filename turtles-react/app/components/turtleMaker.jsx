@@ -9,7 +9,7 @@ class turtleMaker extends React.Component{
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-	setOrientation();
+
   }
 
 	handleClick(id) {
@@ -19,10 +19,10 @@ class turtleMaker extends React.Component{
 	}
   componentWillReceiveProps(nextProps) {
 
-    setOrientation();
-
 
   }
+	
+
 
 
 	render() {
@@ -37,9 +37,6 @@ class turtleMaker extends React.Component{
 			paddingBottom: "2vh",
 			paddingRight: "1vw",
 			paddingLeft: "1vw",
-			//   backgroundColor: "#ffde00",
-			width: turtleWidth,
-			height: "20%",
 			float: "left"
 
 		};
@@ -91,29 +88,10 @@ class turtleMaker extends React.Component{
 			</div>
 
 
-
 		)
-
-
 	}
 }
 
-const setOrientation = () => {
-
-		if (window.screen.height > (window.screen.width)*1.2){
-			//portrait =1			
-			orientation = 1;
-			turtleWidth = "31%"
-			localStorage.setItem("orientation", 1);
-			console.log("portrait");
-		}else{
-			//landscape = 0
-			orientation = 0;
-			turtleWidth = "21%"
-			localStorage.setItem("orientation", 0);
-		}
-}
-	
 
 
 module.exports = turtleMaker;
