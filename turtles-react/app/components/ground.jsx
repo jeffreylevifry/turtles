@@ -22,6 +22,8 @@ class ground  extends React.Component{
 	position: "absolute",
 	display: "block",
 	width: "100%",
+	top: "50%",
+	height: "50%",
 	margin: 0,
 	padding: 0,
 

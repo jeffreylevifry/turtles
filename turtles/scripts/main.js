@@ -45,8 +45,9 @@ $(document).ready(function() {
     */
 
   var currentTurtle;
-
+/*
   $(document).on("inarea", function(event, e1) {
+    
     if (turtlesLoaded > 0) {
       var id = $(e1).attr('id');
       currentTurtle = id;
@@ -60,7 +61,7 @@ $(document).ready(function() {
       console.log(currentTurtle);
     }
   });
-
+*/
   $(document).on("outarea", function(event, data) {
     if (turtlesLoaded > 0) {
       //    divInAnimation();

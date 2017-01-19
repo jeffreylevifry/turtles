@@ -8,12 +8,10 @@ $slate-grey: #545454;
 		width: 21%;
 		height: 20%;
 	}
-	#ground {
-		top: 26%;
-		height: 78%;
-	}
-	h2{
-		font-size:6.2vh;
+
+		#title{
+		margin-top: 1%;
+		font-size: 5.7vw;
 	}
 }
 
@@ -22,24 +20,27 @@ $slate-grey: #545454;
 		width: 31%;
 		height: 18%;
 	}
-	#ground {
-		top: 26%;
-		height: 78%;
-	}
-	h2{
-		font-size:5vw;
+
+	#title{
+		font-size: 5.7vh;
+		margin-top: 2%;
 	}
 	
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 630px) {
 	
-		#ground {
-		top: 17%;
-		height: 78%;
-	}
+
+	
 }
 
+@media screen and (min-width: 1000px) {
+	
+	#title{
+		margin-top: 2%;
+	}
+	
+}
 
 
 a{
@@ -51,24 +52,12 @@ body {
 	padding: 0;
 	background-color: $sky-blue;
 	overflow: hidden;
-	
 	background-repeat:  repeat;
 
 }
 	
-h2 {
-	position: relative;
-		letter-spacing: 8px;
-		
-  color: #fff;
-	background-color:transparent;
-	font-family: silkscreennormal;
-	text-align: center;
-	}
-#hillWrapper {
-background-color: $sky-blue;
 
-}
+
 
 
 #ground {

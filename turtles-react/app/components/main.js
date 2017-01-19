@@ -4,24 +4,21 @@ var Turtle = require('./turtle.jsx');
 var TurtleMaker = require('./turtleMaker.jsx');
 var Hills = require('./hills.jsx');
 var Ground = require('./ground.jsx');
+var Title = require('./title.jsx');
+var Info = require('./infoContainer.jsx');
 require('../../public/main.scss');
 
-	  function componentDidMount() {
-console.log("orientation CHanged");
-window.addEventListener('resize', () => this.forceUpdate());
 
-
-  }
 
 var Main = React.createClass({
     render: function() {
     return (
       <div>
-      <h2> Turtles of Pennsylvania 
-      </h2>
+
+      <Title/>
       <Hills/>
       <Ground/>
-     <div id="infoContainer"></div>
+     <Info/>
       <TurtleMaker/>
         </div>
       
