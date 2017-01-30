@@ -1,4 +1,3 @@
-	
 $sky-blue: #2B99FF;
 $earth-green: #67A256;
 $slate-grey: #545454;
@@ -15,6 +14,7 @@ $slate-grey: #545454;
 	}
 }
 
+
 @media screen and (orientation: portrait){
 	.turtle {
 		width: 31%;
@@ -25,21 +25,13 @@ $slate-grey: #545454;
 		font-size: 5.7vh;
 		margin-top: 2%;
 	}
-	
 }
 
-@media screen and (max-width: 630px) {
-	
-
-	
-}
 
 @media screen and (min-width: 1000px) {
-	
 	#title{
 		margin-top: 2%;
 	}
-	
 }
 
 
@@ -53,11 +45,7 @@ body {
 	background-color: $sky-blue;
 	overflow: hidden;
 	background-repeat:  repeat;
-
 }
-	
-
-
 
 
 #ground {

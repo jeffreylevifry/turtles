@@ -21530,7 +21530,8 @@
 	  width: "35px",
 	  height: "35px",
 	  top: "10px",
-	  right: "10px"
+	  right: "10px",
+	  zIndex: 2
 
 	};
 
@@ -21772,14 +21773,27 @@
 	var photoHolderStyle = {
 	  display: "table",
 	  width: "100%",
-	  tableLayout: "fixed"
+	  height: 0,
+	  tableLayout: "fixed",
+	  paddingTop: "50%"
 	};
 
 	var photoHolderImg = {
+	  position: "absolute",
 	  margin: "0 auto",
 	  padding: "0",
 	  maxWidth: "50%",
-	  height: "auto"
+	  height: "auto",
+	  top: 0
+	};
+	var mapHolderImg = {
+	  position: "absolute",
+	  margin: "0 auto",
+	  padding: "0",
+	  maxWidth: "50%",
+	  height: "auto",
+	  top: 0,
+	  left: "50%"
 	};
 
 	var photoHolder = function (_React$Component) {
@@ -21804,7 +21818,7 @@
 	        'div',
 	        { className: 'photoHolder', style: photoHolderStyle },
 	        React.createElement('img', { style: photoHolderImg, src: turtlePic }),
-	        React.createElement('img', { style: photoHolderImg, src: turtleMap })
+	        React.createElement('img', { style: mapHolderImg, src: turtleMap })
 	      );
 	    }
 	  }]);

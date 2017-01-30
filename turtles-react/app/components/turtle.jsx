@@ -24,6 +24,7 @@ var dismissButton = {
 	height:"35px",
 	top:"10px",
 	right:"10px",
+	zIndex: 2
 
 };
   

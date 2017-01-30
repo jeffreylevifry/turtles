@@ -6,14 +6,27 @@ var turtleMap;
 var photoHolderStyle = {
   display: "table",
   width: "100%",
-  tableLayout: "fixed"
+	height: 0,
+  tableLayout: "fixed",
+	paddingTop:"50%"
 };
 
 var photoHolderImg = {
+	position:"absolute",
 	margin:"0 auto",
 	padding:"0",
 maxWidth: "50%",
-	height: "auto"
+	height: "auto",
+	top: 0
+};
+var mapHolderImg = {
+	position:"absolute",
+	margin:"0 auto",
+	padding:"0",
+maxWidth: "50%",
+	height: "auto",
+	top: 0,
+	left:"50%"
 };
 class photoHolder extends React.Component {
 
@@ -37,7 +50,7 @@ render() {
             <div className="photoHolder" style={photoHolderStyle}  >
         
               <img style={photoHolderImg} src={turtlePic}></img>
-              <img style={photoHolderImg} src={turtleMap}></img>
+              <img style={mapHolderImg} src={turtleMap}></img>
     
     </div>
         
