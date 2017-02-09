@@ -1,6 +1,11 @@
 $sky-blue: #2B99FF;
 $earth-green: #67A256;
 $slate-grey: #545454;
+$dismiss-yellow: #f9ec31;
+
+
+
+
 
 @media screen and (orientation: landscape){
 	.turtle {
@@ -28,15 +33,50 @@ $slate-grey: #545454;
 }
 
 
-@media screen and (min-width: 1000px) {
+
+
+
+@media screen and (max-width: 1023px) {
 	#title{
 		margin-top: 2%;
+	}
+	.dismissBar{
+			  height: 200px;
+		width: 100%;
+	padding-top: 50px;
+		font-size: 3vh;
+		padding-bottom: 200px;
+	}
+		.dismissButton{
+			width: 45px;
+	height: 45px;
 	}
 }
 
 
+@media screen and (min-width: 1023px) {
+	#title{
+		margin-top: 2%;
+	}
+	.dismissBar{
+			  height: 200px;
+		width: 100%;
+	padding-top: 50px;
+		padding-bottom: 8vh;
+		font-size: 3vw;
+	}
+	.dismissButton{
+			width: 50px;
+	height: 50px;
+	}
+}
+
 a{
 	color: $slate-grey;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 body {
@@ -45,6 +85,12 @@ body {
 	background-color: $sky-blue;
 	overflow: hidden;
 	background-repeat:  repeat;
+}
+
+
+.dismissBar{
+background-color: $dismiss-yellow;
+	
 }
 
 

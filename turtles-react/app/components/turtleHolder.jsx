@@ -5,28 +5,26 @@ var TurtleMaker = require('./turtleMaker.jsx');
 var Hills = require('./hills.jsx');
 var Ground = require('./ground.jsx');
 var Title = require('./title.jsx');
-var Info = require('./infoContainer.jsx');
-require('../../public/main.scss');
+
+class turtleHolder  extends React.Component{
 
 
+    render() {
 
-var Main = React.createClass({
-    render: function() {
+
+			
     return (
-      <div>
-
-      <Title/>
-      <Hills/>
+      <div id="turtleHolder">
       <Ground/>
-     <Info/>
+     
       <TurtleMaker/>
-        </div>
-      
+			
+			</div>
+
         )
     }
-});
+};
 
 
 
-
-ReactDOM.render(<Main />, document.getElementById('app'));
+module.exports = turtleHolder;

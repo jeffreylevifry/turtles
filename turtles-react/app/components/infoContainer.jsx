@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
+var Turtle = React.createFactory(require('./turtle.jsx'));
 
 
 class infoContainer  extends React.Component{
@@ -13,7 +13,9 @@ class infoContainer  extends React.Component{
     return (
       
 
-     <div id="infoContainer"></div>
+     <div id="infoContainer">
+			<Turtle />
+			</div>
 
         )
     }

@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Turtle = React.createFactory(require('./turtle.jsx'));
+var Link = require('react-router').Link;
 var orientation;
 var turtleWidth;
 var turtleHeight;
@@ -13,10 +14,9 @@ class turtleMaker extends React.Component{
   }
 
 	handleClick(id) {
-		console.log('turtleMaker handleClick(id) is:', id);
 		localStorage.setItem("currentTurtle", id);
-		ReactDOM.render(<Turtle id ={id} />, document.getElementById('infoContainer'));
 	}
+	
   componentWillReceiveProps(nextProps) {
 
 
@@ -68,25 +68,30 @@ class turtleMaker extends React.Component{
 
 		return ( 
 
-			
+			<div>
 			<div id="turtleContainer" className = "turtleContainer"style = {turtleContainer} > {
 				names.map(function(turtle) {
 
 					var turtleImgConcat = ('images/' + turtle + '.gif').toString();
 					var turtleString = (turtle).toString();
 					return (
+						
+							<Link to='/turtle'>
 						<div id={turtleString} key={turtleImgConcat} className = "turtle" style = {turtleStyle}
-						onClick={() => this.handleClick(turtleString)}   >
+							onClick={() => this.handleClick(turtleString)}
+							>
+							
+							
 						<img style = {imageStyle} src = {turtleImgConcat}></img> 
 						</div>
-
+						</Link>
 
 					)
 				},this)
 			}
 
 			</div>
-
+</div>
 
 		)
 	}

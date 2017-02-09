@@ -1,6 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Title = require('./titleStyler.jsx');
 var Attribution = require('./attribution.jsx');
 import data from 'json!../../public/turtleInfo.json';
 var turtleId;
@@ -38,6 +37,17 @@ var sciNameStyle = {
 	paddingTop:"1vh",
 	paddingBottom:"1vh"
 };
+				 
+var titleStyle = {
+fontFamily: "Roboto Condensed",
+fontWeight: 900,
+ fontSize:"1.8vw",
+	letterSpacing: ".25vw",
+	paddingTop:"3vh",
+	paddingBottom:".2vh"
+
+      }
+
 
 class turtleInfo extends React.Component {
 
@@ -71,11 +81,11 @@ class turtleInfo extends React.Component {
 			<div id = "infoCard" style={infoCard} >
       <div id = "name" style={nameStyle}> {name} </div> 
 			<div id = "sciName" style={sciNameStyle} > {sciName} </div> 
-      <div id = "size" > <Title name="SIZE:" /> {size} </div> 
-      <div id = "status" ><Title name="STATUS:" /> { status} </div> 
-      <div id = "habitat" > <Title name="HABITAT:" /> {habitat} </div> 
-      <div id = "description"> <Title name= "DESCRIPTION:" /> {description}  </div>
-      <div id = "info" > <Title name= "INFO:" /> {info} </div>
+				<div id = "size" > <span style={titleStyle}><br/> SIZE:<br/> </span> {size} </div> 
+      <div id = "status" ><span style={titleStyle}><br/> STATUS:<br/> </span>  { status} </div> 
+      <div id = "habitat" ><span style={titleStyle}><br/> HABITAT:<br/> </span>  {habitat} </div> 
+      <div id = "description"> <span style={titleStyle}><br/> DESCRIPTION:<br/> </span>  {description}  </div>
+      <div id = "info" > <span style={titleStyle}><br/> INFO:<br/> </span> {info} </div>
 			<div ><Attribution id={turtleId} /> </div> 
       </div>
     );

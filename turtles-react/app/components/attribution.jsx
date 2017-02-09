@@ -15,7 +15,6 @@ class attribution  extends React.Component{
 
     super(props);
 
-		console.log(props.id);
     setTurtle(props);
 
 
@@ -32,15 +31,10 @@ class attribution  extends React.Component{
 
     render() {
 			
-		var spacerStyle = {
 
-			width: "100%",
-			height: 100
-
-		}
 		var attributionStyle = {
 			marginTop: 50,
-			marginBottom: 100
+			marginBottom: 50
 			
 		}
 
@@ -57,17 +51,17 @@ class attribution  extends React.Component{
 
      
    <div id ="attribution" style ={attributionStyle}>
-      <div style={linkStyle}>PHOTO BY <a style={linkStyle} rel="nofollow" href={photoLink}>{photoAuthor}</a></div>
+      <div style={linkStyle}>PHOTO BY <a style={linkStyle} rel="nofollow" target="_blank" href={photoLink}>{photoAuthor}</a></div>
         {'\n'}<div style={linkStyle}>DISTRIBUTION INFORMATION FROM 
-    <a style={linkStyle} rel="nofollow"  href="HTTP://PAHERPSURVEY.ORG/"> PAHERPSURVEY.ORG </a> AND  
-    <a style={linkStyle} rel="nofollow"  href="HTTP://WWW.PAHERPS.COM/"> PAHERPS.COM</a>
+    <a style={linkStyle} rel="nofollow" target="_blank"  href="HTTP://PAHERPSURVEY.ORG/"> PAHERPSURVEY.ORG </a> AND  
+    <a style={linkStyle} rel="nofollow" target="_blank" href="HTTP://WWW.PAHERPS.COM/"> PAHERPS.COM</a>
 				</div>
 {'\n'} <div style={linkStyle}> ADDITIONAL INFORMATION FROM
-  <a style={linkStyle} rel="nofollow"  href={infoLink}> WIKIPEDIA </a>
+  <a style={linkStyle} rel="nofollow"  target="_blank" href={infoLink}> WIKIPEDIA </a>
 				</div>
 			
 	
-			<div id="spacer" style={spacerStyle}></div>
+
 			</div>
         )
     }
